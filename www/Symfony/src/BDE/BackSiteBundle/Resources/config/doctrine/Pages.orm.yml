@@ -1,0 +1,29 @@
+BDE\BackSiteBundle\Entity\Pages:
+    type: entity
+    table: null
+    repositoryClass: BDE\BackSiteBundle\Repository\PagesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        annotation:
+            type: string
+            length: 255
+        titre:
+            type: string
+            length: '100'
+            column: Titre
+        description:
+            type: string
+            length: '100'
+            column: Description
+        background:
+            type: string
+            length: 255
+        url:
+            type: string
+            length: '100'
+    lifecycleCallbacks: {  }

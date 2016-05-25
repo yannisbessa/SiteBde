@@ -1,0 +1,30 @@
+{# src/OCDE/SiteBundle/Resources/views/Bde/AssoSite.html.twig #}
+
+
+{% extends "BDESiteBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} Transaharienne{% endblock %}
+{% block img %}
+    <header class="intro-header" style="background-image: url({{asset ('img/ISEPTRANSHARIENNE.jpg')}});">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  <div class="site-heading">
+                        <h1 style ="color:orange";>Transaharienne</h1>
+
+{% endblock %}
+{% block body %}
+<p>Transahariennes</p>
+
+
+<p>La mission de la Transaharienne est d’organiser tous les ans un voyage culturel au Maroc à caractère humanitaire. 
+Ce voyage auquel prennent part les élèves de l’ISEP est une occasion de partir à la découverte du Maroc, de sa population et de sa culture tout en apportant un soutien humanitaire dans des écoles du sud marocain. 
+La visite des écoles, des villages isolés permet d’apporter un soutien aux enfants ainsi qu’à leurs familles en leur distribuant des cahiers, livres, stylos et autre matériel scolaire.
+Sur place, de nombreuses activités sont proposées aux isèpiens et isèpiennes: jetski, excursion en dromadaire, nuit dans les dunes de sable et dans une famille berbère, visite de monuments, un véritable hammam,.. et plein d'autres surprises..
+Un séjour dépaysant duquel vous reviendrez fascinés !</p>
+<p>https://www.facebook.com/pages/ISEP-Bands/397215573683079</p>
+
+<p>Date de création : Lundi 1er Mars 1999</p>
+<p>Email : transaharienne@isep.fr</p>
+{% endblock %}
+

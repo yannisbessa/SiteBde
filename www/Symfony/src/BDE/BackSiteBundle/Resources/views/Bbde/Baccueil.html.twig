@@ -1,0 +1,41 @@
+{# src/BDE/SiteBundle/Resources/views/layout.html.twig #}
+
+
+{% extends "BDESiteBundle::layout.html.twig" %}
+{% block title %}
+ Back office
+{% endblock %}
+
+
+{% block img %}
+    <header class="intro-header" style="size: 10px !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  <div class="site-heading">
+                        <h1 style ="color:#428bca";>Back-office</h1>
+"<style type="text/css"> 
+.navbar-custom .nav li a {
+    color: #428bca !important;
+    padding: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .intro-header .site-heading,
+  .intro-header .post-heading,
+  .intro-header .page-heading {
+    padding: 100px 0 !important;
+  }
+p{
+    color: #428bca !important;
+    padding: 20px;
+}
+
+</style>
+
+{% endblock %}
+{% block body %}
+  <p> Lorsque vous desirer modifier une page du site, il vous suffit de cliquer sur l'onglet correspondant à vos envies</p>
+
+
+
+{% endblock %}

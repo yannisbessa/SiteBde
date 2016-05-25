@@ -1,0 +1,10 @@
+
+
+BDE_site_Baccueil:
+    path:      /Baccueil
+    defaults:  { _controller: BDEBackSiteBundle:BBde:Baccueil }
+
+
+BDE_site_Backpage:
+    path:      /backpage
+    defaults:  { _controller: BDEBackSiteBundle:BBde:backpage }

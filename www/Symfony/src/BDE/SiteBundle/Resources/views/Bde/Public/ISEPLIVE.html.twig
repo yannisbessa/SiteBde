@@ -1,0 +1,29 @@
+{# src/OCDE/SiteBundle/Resources/views/Bde/AssoSite.html.twig #}
+
+
+{% extends "BDESiteBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} ISEPLIVE {% endblock %}
+{% block img %}
+    <header class="intro-header" style="background-image: url({{asset ('img/ISEPLIVE.jpg')}});">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  <div class="site-heading">
+                        <h1 style ="color:yellow";>Isep live</h1>
+
+{% endblock %}
+{% block body %}
+<p>ISEPLIVE</p>
+
+
+<p>ISEPLive est responsable de tous les vecteurs de communication inter-élèves de l'ISEP : affiches, sites web des associations, journal de l'école, podcast, reportages photos, vidéos...</p>
+
+<p>ISEPLive a pour mission de fournir aux isépiens un flux continu d'informations sur la vie de l'école, et d'apporter une couverture médiatique à tous les évenements : soirées, WEI, sport...</p>
+
+<p>www.iseplive.fr</p>
+
+<p>Date de création : Jeudi 1er Juin 2006</p>
+<p>Email : iseplive@isep.fr</p>
+
+{% endblock %}

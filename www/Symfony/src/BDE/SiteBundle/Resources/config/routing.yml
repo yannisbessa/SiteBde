@@ -1,0 +1,57 @@
+#src/BDE/SiteBundle/Resources/config/routing.yml
+BDE_site_Accueil:
+    path:      /Accueil
+    defaults:  { _controller: BDESiteBundle:Bde:Accueil }
+
+BDE_site_ISEPTRAVEL:
+    path:      /ISEPTRAVEL
+    defaults:  { _controller: BDESiteBundle:Bde:ISEPTRAVEL }
+
+BDE_site_ISEPTRANSAHARIENNE:
+    path:      /ISEPTRANSAHARIENNE
+    defaults:  { _controller: BDESiteBundle:Bde:ISEPTRANSAHARIENNE }
+    
+BDE_site_ISEPA:
+    path:      /ISEPTRANSAHARIENNE
+    defaults:  { _controller: BDESiteBundle:Bde:ISEPA }
+
+BDE_site_JUNIORISEP:
+    path:      /JUNIORISEP
+    defaults:  { _controller: BDESiteBundle:Bde:JUNIORISEP}
+
+BDE_site_ISEPBANDS:
+    path:      /ISEPBANDS
+    defaults:  { _controller: BDESiteBundle:Bde:ISEPBANDS}
+
+
+BDE_site_ELLYPSIS:
+    path:      /ELLYPSIS
+    defaults:  { _controller: BDESiteBundle:Bde:ELLYPSIS}
+
+BDE_site_ISEPVOILE:
+    path:      /ISEPVOILE
+    defaults:  { _controller: BDESiteBundle:Bde:ISEPVOILE}
+
+BDE_site_ISEPLIVE:
+    path:      /ISEPLIVE
+    defaults:  { _controller: BDESiteBundle:Bde:ISEPLIVE}
+BDE_site_Asso:
+    path:      /Asso
+    defaults:  { _controller: BDESiteBundle:Bde:Asso }
+
+BDE_site_Cal:
+    path:      /Cal
+    defaults:  { _controller: BDESiteBundle:Bde:Cal}
+
+BDE_site_ISEP:
+    path:      /ISEP  
+    defaults:  { _controller: BDESiteBundle:Bde:ISEP }
+
+BDE_site_AccueilEleve:
+    path:      /AEleve 
+    defaults:  { _controller: BDESiteBundle:Bde:AccueilEleve }
+
+BDE_site_Discussion:
+    path:      /Disc  
+    defaults:  { _controller: BDESiteBundle:Bde:Discussion }
+

@@ -1,0 +1,4 @@
+services:
+#    bde_back_site.example:
+#        class: BDE\BackSiteBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
