@@ -14,8 +14,7 @@ class BdeController extends Controller
   {
 
 
-    $content = $this->get('templating')->render('BDESiteBundle:Bde/Public:AccueilSite.html.twig');
-    return new Response($content);
+return $this->render('BDESiteBundle:Bde:AccueilSite.html.twig');
     
 }
 
@@ -23,7 +22,7 @@ class BdeController extends Controller
  public function ISEPTRAVELAction()
   {
     
-    $content = $this->get('templating')->render('BDESiteBundle:Bde/Public:ISEPTRAVEL.html.twig');
+    $content = $this->get('templating')->render('BDESiteBundle:Bde:ISEPTRAVEL.html.twig');
     return new Response($content);
     
 
@@ -33,7 +32,7 @@ class BdeController extends Controller
  public function ISEPBANDSAction()
   {
     
-    $content = $this->get('templating')->render('BDESiteBundle:Bde/Public:ISEPBANDS.html.twig');
+    $content = $this->get('templating')->render('BDESiteBundle:Bde:ISEPBANDS.html.twig');
     return new Response($content);
     
 
@@ -41,7 +40,7 @@ class BdeController extends Controller
  public function JUNIORISEPAction()
   {
     
-    $content = $this->get('templating')->render('BDESiteBundle:Bde/Public:JUNIORISEP.html.twig');
+    $content = $this->get('templating')->render('BDESiteBundle:Bde:JUNIORISEP.html.twig');
     return new Response($content);
     
 
@@ -49,7 +48,7 @@ class BdeController extends Controller
  public function ISEPVOILEAction()
   {
     
-    $content = $this->get('templating')->render('BDESiteBundle:Bde/Public:ISEPVOILE.html.twig');
+    $content = $this->get('templating')->render('BDESiteBundle:Bde:ISEPVOILE.html.twig');
     return new Response($content);
     
 
@@ -57,7 +56,7 @@ class BdeController extends Controller
  public function ELLYPSISAction()
   {
     
-    $content = $this->get('templating')->render('BDESiteBundle:Bde/Public:ELLYPSIS.html.twig');
+    $content = $this->get('templating')->render('BDESiteBundle:Bde:ELLYPSIS.html.twig');
     return new Response($content);
     
 
@@ -65,7 +64,7 @@ class BdeController extends Controller
  public function ISEPLIVEAction()
   {
     
-    $content = $this->get('templating')->render('BDESiteBundle:Bde/Public:ISEPLIVE.html.twig');
+    $content = $this->get('templating')->render('BDESiteBundle:Bde:ISEPLIVE.html.twig');
     return new Response($content);
     
 
@@ -74,7 +73,7 @@ class BdeController extends Controller
  public function ISEPAAction()
   {
     
-    $content = $this->get('templating')->render('BDESiteBundle:Bde/Public:ISEPA.html.twig');
+    $content = $this->get('templating')->render('BDESiteBundle:Bde:ISEPA.html.twig');
     return new Response($content);
     
 
@@ -84,7 +83,7 @@ class BdeController extends Controller
  public function ISEPAction()
   {
     
-    $content = $this->get('templating')->render('BDESiteBundle:Bde/Public:ISEP.html.twig');
+    $content = $this->get('templating')->render('BDESiteBundle:Bde:ISEP.html.twig');
     return new Response($content);    
 
 }
@@ -92,31 +91,22 @@ class BdeController extends Controller
  public function AssoAction()
   {
     
-    $content = $this->get('templating')->render('BDESiteBundle:Bde/Public:AssoSite.html.twig');
+    $content = $this->get('templating')->render('BDESiteBundle:Bde:AssoSite.html.twig');
     return new Response($content);
     
 }
  public function CalAction()
   {
     
-    $content = $this->get('templating')->render('BDESiteBundle:Bde/Public:CalSite.html.twig');
+    $content = $this->get('templating')->render('BDESiteBundle:Bde:CalSite.html.twig');
     return new Response($content);
     
 
 } 
- public function AccueilEleveAction()
+ public function EAccueilAction()
   {
     
-    $content = $this->get('templating')->render('BDESiteBundle:Bde/Eleve:AccueilEleve.html.twig');
-    return new Response($content);
-    
-
-} 
-
- public function discussionAction()
-  {
-    
-    $content = $this->get('templating')->render('BDESiteBundle:Bde/Eleve:Discussion.html.twig');
+    $content = $this->get('templating')->render('BDESiteBundle:Bde:EAccueil.html.twig');
     return new Response($content);
     
 

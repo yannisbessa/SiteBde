@@ -1,0 +1,19 @@
+{# src/BDE/SiteBundle/Resources/views/layout.html.twig #}
+
+{% extends "::layoutBackoffice.html.twig" %}
+
+
+{% block body %}
+
+  {# On définit un sous-titre commun à toutes les pages du bundle, par exemple #}
+  <h2>Ajouter un pole</h2>
+
+<form action="{{path("BDE_site_BAccueil")}}" method="post">
+<p> ajouter un pole</p>
+{{form_widget(form)}}
+<input type="submit">
+
+</form>
+
+
+{% endblock %}

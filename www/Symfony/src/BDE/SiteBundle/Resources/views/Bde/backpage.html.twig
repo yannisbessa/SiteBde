@@ -1,0 +1,21 @@
+{# src/BDE/SiteBundle/Resources/views/layout.html.twig #}
+
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+ {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h1 >Bienvenue sur le back office </h1>
+
+  {% block BDESite_body %}
+
+
+
+  <p><a href="{{ path('BDE_site_BAccueil') }}"> Accueil </p>
+  <p> calendrier </p>
+  {% endblock %}
+
+{% endblock %}

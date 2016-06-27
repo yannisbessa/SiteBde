@@ -1,0 +1,18 @@
+
+{# src/BDE/SiteBundle/Resources/views/Bde/index.html.twig #}
+
+{% extends "BDESiteBundle::Layout.html.twig" %}
+
+
+
+{% block body %}
+
+<h1>ajouter page</h1>
+<form action="{{ path("BDE_backsite_ajouter")}}" method="post">
+
+{{form_widget(form)}}
+
+<input type="submit">
+</form>
+
+{% endblock %}

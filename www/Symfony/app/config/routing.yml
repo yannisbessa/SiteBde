@@ -1,8 +1,7 @@
-user:
-    resource: "@BDEUserBundle/Controller/"
-    type:     annotation
-    prefix:   /
 
+bde_user:
+    resource: "@BDEUserBundle/Resources/config/routing.yml"
+    prefix:   /user
 bde_back_site:
     resource: "@BDEBackSiteBundle/Resources/config/routing.yml"
     prefix:   /bsite
@@ -37,3 +36,19 @@ fos_js_routing:
 
 adesigns_calendar:
     resource: "@ADesignsCalendarBundle/Resources/config/routing.xml"
+# login:
+#     path: /login
+#     defaults:
+#         _controller: BDEUserBundle:Security:login
+
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile

@@ -28,6 +28,6 @@ class PagesType extends AbstractType
      */
     public function getName()
     {
-        return 'bde_backsitebundle_pages';
+        return 'bde_backsitebundle_backpage';
     }
 }

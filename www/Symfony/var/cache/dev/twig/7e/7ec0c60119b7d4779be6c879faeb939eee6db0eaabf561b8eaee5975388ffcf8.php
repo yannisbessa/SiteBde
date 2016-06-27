@@ -23,33 +23,33 @@ class __TwigTemplate_9cdb09623939a917535dec8303d24da8525cbc49bf9245daae717886869
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_2092a8b48dd07f139b18686c17b5c8b2512fb988c20c4718be7cc210b8337e1d = $this->env->getExtension("native_profiler");
-        $__internal_2092a8b48dd07f139b18686c17b5c8b2512fb988c20c4718be7cc210b8337e1d->enter($__internal_2092a8b48dd07f139b18686c17b5c8b2512fb988c20c4718be7cc210b8337e1d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@BDESite/Bde/ISEP.html.twig"));
+        $__internal_55c79337622e9b3b3f6d1c070dc7a3e93785af32578a727c2c7b14029a7a9c74 = $this->env->getExtension("native_profiler");
+        $__internal_55c79337622e9b3b3f6d1c070dc7a3e93785af32578a727c2c7b14029a7a9c74->enter($__internal_55c79337622e9b3b3f6d1c070dc7a3e93785af32578a727c2c7b14029a7a9c74_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@BDESite/Bde/ISEP.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_2092a8b48dd07f139b18686c17b5c8b2512fb988c20c4718be7cc210b8337e1d->leave($__internal_2092a8b48dd07f139b18686c17b5c8b2512fb988c20c4718be7cc210b8337e1d_prof);
+        $__internal_55c79337622e9b3b3f6d1c070dc7a3e93785af32578a727c2c7b14029a7a9c74->leave($__internal_55c79337622e9b3b3f6d1c070dc7a3e93785af32578a727c2c7b14029a7a9c74_prof);
 
     }
 
     // line 6
     public function block_title($context, array $blocks = array())
     {
-        $__internal_c11885d1268b46520dd943bf5611c38ba37307a4904f9badc2bcfee6c107046a = $this->env->getExtension("native_profiler");
-        $__internal_c11885d1268b46520dd943bf5611c38ba37307a4904f9badc2bcfee6c107046a->enter($__internal_c11885d1268b46520dd943bf5611c38ba37307a4904f9badc2bcfee6c107046a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_c86005dab99c48393fd22e18cdebd46479d74c2ca04a9ff23f5c42a669470f50 = $this->env->getExtension("native_profiler");
+        $__internal_c86005dab99c48393fd22e18cdebd46479d74c2ca04a9ff23f5c42a669470f50->enter($__internal_c86005dab99c48393fd22e18cdebd46479d74c2ca04a9ff23f5c42a669470f50_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         $this->displayParentBlock("title", $context, $blocks);
         echo " ISEP";
         
-        $__internal_c11885d1268b46520dd943bf5611c38ba37307a4904f9badc2bcfee6c107046a->leave($__internal_c11885d1268b46520dd943bf5611c38ba37307a4904f9badc2bcfee6c107046a_prof);
+        $__internal_c86005dab99c48393fd22e18cdebd46479d74c2ca04a9ff23f5c42a669470f50->leave($__internal_c86005dab99c48393fd22e18cdebd46479d74c2ca04a9ff23f5c42a669470f50_prof);
 
     }
 
     // line 7
     public function block_img($context, array $blocks = array())
     {
-        $__internal_6d965106c8bb6192bac78e7250d669bfe6e056ac2bb0be1ab2aacc2340657b5c = $this->env->getExtension("native_profiler");
-        $__internal_6d965106c8bb6192bac78e7250d669bfe6e056ac2bb0be1ab2aacc2340657b5c->enter($__internal_6d965106c8bb6192bac78e7250d669bfe6e056ac2bb0be1ab2aacc2340657b5c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "img"));
+        $__internal_dc251dde08bd32123c5cdf71526e3bc4b8e4338d1af813146462adf99992df43 = $this->env->getExtension("native_profiler");
+        $__internal_dc251dde08bd32123c5cdf71526e3bc4b8e4338d1af813146462adf99992df43->enter($__internal_dc251dde08bd32123c5cdf71526e3bc4b8e4338d1af813146462adf99992df43_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "img"));
 
         // line 8
         echo "  <header class=\"intro-header\" style=\"background-image: url(";
@@ -59,19 +59,19 @@ class __TwigTemplate_9cdb09623939a917535dec8303d24da8525cbc49bf9245daae717886869
             <div class=\"row\">
                 <div class=\"col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1\">
                   <div class=\"site-heading\">
-                        <h1 style =\"color:white\";>Institut supérieur d'éléctronique de Paris</h1>
+                        
 
 ";
         
-        $__internal_6d965106c8bb6192bac78e7250d669bfe6e056ac2bb0be1ab2aacc2340657b5c->leave($__internal_6d965106c8bb6192bac78e7250d669bfe6e056ac2bb0be1ab2aacc2340657b5c_prof);
+        $__internal_dc251dde08bd32123c5cdf71526e3bc4b8e4338d1af813146462adf99992df43->leave($__internal_dc251dde08bd32123c5cdf71526e3bc4b8e4338d1af813146462adf99992df43_prof);
 
     }
 
     // line 16
     public function block_body($context, array $blocks = array())
     {
-        $__internal_abb04684f285243beffd12fd576dccb13d2b0dbbb1d8298b8afbca155f888db9 = $this->env->getExtension("native_profiler");
-        $__internal_abb04684f285243beffd12fd576dccb13d2b0dbbb1d8298b8afbca155f888db9->enter($__internal_abb04684f285243beffd12fd576dccb13d2b0dbbb1d8298b8afbca155f888db9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_24972d4381b97810d21ce91f1fc0ed9bec9d40628a51a8d704715c49700d4d0d = $this->env->getExtension("native_profiler");
+        $__internal_24972d4381b97810d21ce91f1fc0ed9bec9d40628a51a8d704715c49700d4d0d->enter($__internal_24972d4381b97810d21ce91f1fc0ed9bec9d40628a51a8d704715c49700d4d0d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 17
         echo "
@@ -120,7 +120,7 @@ class __TwigTemplate_9cdb09623939a917535dec8303d24da8525cbc49bf9245daae717886869
   
 ";
         
-        $__internal_abb04684f285243beffd12fd576dccb13d2b0dbbb1d8298b8afbca155f888db9->leave($__internal_abb04684f285243beffd12fd576dccb13d2b0dbbb1d8298b8afbca155f888db9_prof);
+        $__internal_24972d4381b97810d21ce91f1fc0ed9bec9d40628a51a8d704715c49700d4d0d->leave($__internal_24972d4381b97810d21ce91f1fc0ed9bec9d40628a51a8d704715c49700d4d0d_prof);
 
     }
 
@@ -151,7 +151,7 @@ class __TwigTemplate_9cdb09623939a917535dec8303d24da8525cbc49bf9245daae717886869
 /*             <div class="row">*/
 /*                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">*/
 /*                   <div class="site-heading">*/
-/*                         <h1 style ="color:white";>Institut supérieur d'éléctronique de Paris</h1>*/
+/*                         */
 /* */
 /* {% endblock %}*/
 /* {% block body %}*/

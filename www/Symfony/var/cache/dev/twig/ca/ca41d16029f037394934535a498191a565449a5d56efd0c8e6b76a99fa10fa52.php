@@ -23,33 +23,33 @@ class __TwigTemplate_f9ef231331a5fa75c4dbadb5de2d6b6753c692eebf2488c9468fe6f4e1a
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c01b2ba77547572abcbb9ce3d5be1a16d76855421c5298260f6d4ba0380fb44d = $this->env->getExtension("native_profiler");
-        $__internal_c01b2ba77547572abcbb9ce3d5be1a16d76855421c5298260f6d4ba0380fb44d->enter($__internal_c01b2ba77547572abcbb9ce3d5be1a16d76855421c5298260f6d4ba0380fb44d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@BDESite/Bde/AccueilSite.html.twig"));
+        $__internal_db72dc92b6c4c91c1a5a716302539174fd171bccaf2e0d1b81dbf5d5612f2fdb = $this->env->getExtension("native_profiler");
+        $__internal_db72dc92b6c4c91c1a5a716302539174fd171bccaf2e0d1b81dbf5d5612f2fdb->enter($__internal_db72dc92b6c4c91c1a5a716302539174fd171bccaf2e0d1b81dbf5d5612f2fdb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@BDESite/Bde/AccueilSite.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_c01b2ba77547572abcbb9ce3d5be1a16d76855421c5298260f6d4ba0380fb44d->leave($__internal_c01b2ba77547572abcbb9ce3d5be1a16d76855421c5298260f6d4ba0380fb44d_prof);
+        $__internal_db72dc92b6c4c91c1a5a716302539174fd171bccaf2e0d1b81dbf5d5612f2fdb->leave($__internal_db72dc92b6c4c91c1a5a716302539174fd171bccaf2e0d1b81dbf5d5612f2fdb_prof);
 
     }
 
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        $__internal_dc2f658c7ad6ef501d67272f94b08c589e7ee94e6d91aa6edb7f5b2bbf20f3f3 = $this->env->getExtension("native_profiler");
-        $__internal_dc2f658c7ad6ef501d67272f94b08c589e7ee94e6d91aa6edb7f5b2bbf20f3f3->enter($__internal_dc2f658c7ad6ef501d67272f94b08c589e7ee94e6d91aa6edb7f5b2bbf20f3f3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_340e8c9ed83c91bca967c6872a63e7c2f41ebb1a4ae27958a13d55e0029df951 = $this->env->getExtension("native_profiler");
+        $__internal_340e8c9ed83c91bca967c6872a63e7c2f41ebb1a4ae27958a13d55e0029df951->enter($__internal_340e8c9ed83c91bca967c6872a63e7c2f41ebb1a4ae27958a13d55e0029df951_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         $this->displayParentBlock("title", $context, $blocks);
         echo " Accueil ";
         
-        $__internal_dc2f658c7ad6ef501d67272f94b08c589e7ee94e6d91aa6edb7f5b2bbf20f3f3->leave($__internal_dc2f658c7ad6ef501d67272f94b08c589e7ee94e6d91aa6edb7f5b2bbf20f3f3_prof);
+        $__internal_340e8c9ed83c91bca967c6872a63e7c2f41ebb1a4ae27958a13d55e0029df951->leave($__internal_340e8c9ed83c91bca967c6872a63e7c2f41ebb1a4ae27958a13d55e0029df951_prof);
 
     }
 
     // line 6
     public function block_img($context, array $blocks = array())
     {
-        $__internal_34fc0f268e97da3055978a74372ef2dc1f3feb8caea6504a18a6a425e8c97c14 = $this->env->getExtension("native_profiler");
-        $__internal_34fc0f268e97da3055978a74372ef2dc1f3feb8caea6504a18a6a425e8c97c14->enter($__internal_34fc0f268e97da3055978a74372ef2dc1f3feb8caea6504a18a6a425e8c97c14_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "img"));
+        $__internal_9ad7c89abc7e9a5c62c969292cc07f1da31b2e0ef6880b33e40a31bc97aa44cd = $this->env->getExtension("native_profiler");
+        $__internal_9ad7c89abc7e9a5c62c969292cc07f1da31b2e0ef6880b33e40a31bc97aa44cd->enter($__internal_9ad7c89abc7e9a5c62c969292cc07f1da31b2e0ef6880b33e40a31bc97aa44cd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "img"));
 
         // line 7
         echo "    <header class=\"intro-header\" style=\"background-image: url(";
@@ -59,19 +59,19 @@ class __TwigTemplate_f9ef231331a5fa75c4dbadb5de2d6b6753c692eebf2488c9468fe6f4e1a
             <div class=\"row\">
                 <div class=\"col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1\">
                   <div class=\"site-heading\">
-                        <h1>Bureau des étudiants 7'tease </h1>
+                        <h1 > Bureau des étudiants 7'tease </h1>
 
 ";
         
-        $__internal_34fc0f268e97da3055978a74372ef2dc1f3feb8caea6504a18a6a425e8c97c14->leave($__internal_34fc0f268e97da3055978a74372ef2dc1f3feb8caea6504a18a6a425e8c97c14_prof);
+        $__internal_9ad7c89abc7e9a5c62c969292cc07f1da31b2e0ef6880b33e40a31bc97aa44cd->leave($__internal_9ad7c89abc7e9a5c62c969292cc07f1da31b2e0ef6880b33e40a31bc97aa44cd_prof);
 
     }
 
     // line 15
     public function block_body($context, array $blocks = array())
     {
-        $__internal_7070fdbafcc6f87f44a2fded569914d3d3bdf00e9dae6fb53db49d75575e7f56 = $this->env->getExtension("native_profiler");
-        $__internal_7070fdbafcc6f87f44a2fded569914d3d3bdf00e9dae6fb53db49d75575e7f56->enter($__internal_7070fdbafcc6f87f44a2fded569914d3d3bdf00e9dae6fb53db49d75575e7f56_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_822d1f603c4b2c395df43885569ee145f5639421973904015920abcd637093c5 = $this->env->getExtension("native_profiler");
+        $__internal_822d1f603c4b2c395df43885569ee145f5639421973904015920abcd637093c5->enter($__internal_822d1f603c4b2c395df43885569ee145f5639421973904015920abcd637093c5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 16
         echo "
@@ -84,9 +84,10 @@ Pour les isepiens ce site est une plateforme de communication intra-isep.
 
 Pour toutes demandes d'information vous pouvons nous contacter par mail à l'adresse suivante : bde.isep@isep.fr ou sur notre page facebook.</p>
 
+
 ";
         
-        $__internal_7070fdbafcc6f87f44a2fded569914d3d3bdf00e9dae6fb53db49d75575e7f56->leave($__internal_7070fdbafcc6f87f44a2fded569914d3d3bdf00e9dae6fb53db49d75575e7f56_prof);
+        $__internal_822d1f603c4b2c395df43885569ee145f5639421973904015920abcd637093c5->leave($__internal_822d1f603c4b2c395df43885569ee145f5639421973904015920abcd637093c5_prof);
 
     }
 
@@ -116,7 +117,7 @@ Pour toutes demandes d'information vous pouvons nous contacter par mail à l'adr
 /*             <div class="row">*/
 /*                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">*/
 /*                   <div class="site-heading">*/
-/*                         <h1>Bureau des étudiants 7'tease </h1>*/
+/*                         <h1 > Bureau des étudiants 7'tease </h1>*/
 /* */
 /* {% endblock %}*/
 /* {% block body %}*/
@@ -130,5 +131,5 @@ Pour toutes demandes d'information vous pouvons nous contacter par mail à l'adr
 /* */
 /* Pour toutes demandes d'information vous pouvons nous contacter par mail à l'adresse suivante : bde.isep@isep.fr ou sur notre page facebook.</p>*/
 /* */
-/* {% endblock %}*/
 /* */
+/* {% endblock %}*/

@@ -286,6 +286,7 @@ $catalogueEn = new MessageCatalogue('en', array (
     'fos_user.group.blank' => 'Please enter a name',
     'fos_user.group.short' => '[-Inf,Inf]The name is too short',
     'fos_user.group.long' => '[-Inf,Inf]The name is too long',
+    'fr3d_ldap.username.already_used' => 'The username is already used',
   ),
   'security' => 
   array (

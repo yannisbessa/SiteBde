@@ -1,0 +1,19 @@
+{# src/BDE/SiteBundle/Resources/views/Bde/index.html.twig #}
+
+{% extends "BDESiteBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }}Calendrier{% endblock %}
+{% block img %}
+  <header class="intro-header" style="background-image: url({{asset ('img/asso.jpg')}});">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  <div class="site-heading">
+                        <h1 style ="color:white";>Calendrier associatif</h1>
+
+{% endblock %}
+
+{% block body %}
+{% include 'ADesignsCalendarBundle::calendar.html.twig' %}
+
+{% endblock %}

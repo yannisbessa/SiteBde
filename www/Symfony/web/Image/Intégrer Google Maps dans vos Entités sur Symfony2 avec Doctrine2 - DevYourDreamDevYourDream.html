@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<!-- saved from url=(0101)http://devyourdream.net/2012/08/28/integrer-google-maps-dans-vos-entites-sur-symfony2-avec-doctrine2/ -->
+<html lang="fr-FR" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/cb=gapi.loaded_1" async=""></script><script src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/cb=gapi.loaded_0" async=""></script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream</title>
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://devyourdream.net/wp/xmlrpc.php">
+
+
+
+<!-- This site is optimized with the Yoast WordPress SEO plugin v2.2.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Il arrive souvent que dans certains projets web, vous vous retrouvez avec de nombreux types de données tels que des personnes, des entreprises, ou tout sim">
+<link rel="canonical" href="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream.html">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDream">
+<meta property="og:description" content="Il arrive souvent que dans certains projets web, vous vous retrouvez avec de nombreux types de données tels que des personnes, des entreprises, ou tout sim">
+<meta property="og:url" content="http://devyourdream.net/2012/08/28/integrer-google-maps-dans-vos-entites-sur-symfony2-avec-doctrine2/">
+<meta property="og:site_name" content="DevYourDream">
+<meta property="article:tag" content="Doctrine2">
+<meta property="article:tag" content="Google">
+<meta property="article:tag" content="Google Maps">
+<meta property="article:tag" content="PHP">
+<meta property="article:tag" content="Symfony2">
+<meta property="article:section" content="Tutos &amp; Astuces">
+<meta property="article:published_time" content="2012-08-28T22:03:45+00:00">
+<meta property="article:modified_time" content="2013-04-18T22:46:53+00:00">
+<meta property="og:updated_time" content="2013-04-18T22:46:53+00:00">
+<meta property="fb:admins" content="1270311731">
+<meta property="og:image" content="http://devyourdream.net/app/uploads/2012/08/gmap-symfony2-doctrine2.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="Il arrive souvent que dans certains projets web, vous vous retrouvez avec de nombreux types de données tels que des personnes, des entreprises, ou tout sim">
+<meta name="twitter:title" content="Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDream">
+<meta name="twitter:site" content="@Soullivaneuh">
+<meta name="twitter:domain" content="DevYourDream">
+<meta name="twitter:image:src" content="http://devyourdream.net/app/uploads/2012/08/gmap-symfony2-doctrine2.png">
+<meta name="twitter:creator" content="@Soullivaneuh">
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="DevYourDream » Flux" href="http://devyourdream.net/feed/">
+<link rel="alternate" type="application/rss+xml" title="DevYourDream » Flux des commentaires" href="http://devyourdream.net/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="DevYourDream » Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 Flux des commentaires" href="http://devyourdream.net/2012/08/28/integrer-google-maps-dans-vos-entites-sur-symfony2-avec-doctrine2/feed/">
+		<script type="text/javascript" async="" src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/ga.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/devyourdream.net\/wp\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.2.2"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/wp-emoji-release.min.js" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="digg-digg-css" href="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/diggdigg-style.css" type="text/css" media="screen">
+<link rel="stylesheet" id="ssbaFont-css" href="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="fancybox-css" href="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/jquery.fancybox-1.3.7.min.css" type="text/css" media="screen">
+<link rel="stylesheet" id="ar2-css" href="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/style.css" type="text/css" media="screen">
+<link rel="stylesheet" id="ar2-user-css" href="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/user.css" type="text/css" media="screen">
+<!-- This site uses the Google Analytics by Yoast plugin v5.4.2 - Universal disabled - https://yoast.com/wordpress/plugins/google-analytics/ -->
+<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-34391646-1']);
+	_gaq.push(['_gat._forceSSL']);
+	_gaq.push(['_trackPageview']);
+
+	(function () {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
+
+</script><style type="text/css"></style>
+<!-- / Google Analytics by Yoast -->
+<script type="text/javascript" src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/jquery.js"></script>
+<script type="text/javascript" src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/modernizr.custom.min.js"></script>
+<script type="text/javascript" src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/tinynav.min.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://devyourdream.net/wp/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://devyourdream.net/wp/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.2.2">
+<link rel="shortlink" href="http://devyourdream.net/?p=134">
+<style type="text/css">	.ssba {
+									
+									
+									
+									
+								}
+								.ssba img
+								{
+									width: 38px !important;
+									padding: 6px;
+									border:  0;
+									box-shadow: none !important;
+									display: inline !important;
+									vertical-align: middle;
+								}
+								.ssba, .ssba a
+								{
+									text-decoration:none;
+									background: none;
+									font-family: Indie Flower;
+									font-size: 	20px;
+									
+									
+								}.ssba_sharecount:after, .ssba_sharecount:before {
+									right: 100%;
+									border: solid transparent;
+									content: " ";
+									height: 0;
+									width: 0;
+									position: absolute;
+									pointer-events: none;
+								}
+								.ssba_sharecount:after {
+									border-color: rgba(224, 221, 221, 0);
+									border-right-color: #f5f5f5;
+									border-width: 5px;
+									top: 50%;
+									margin-top: -5px;
+								}
+								.ssba_sharecount:before {
+									border-color: rgba(85, 94, 88, 0);
+									border-right-color: #e0dddd;
+									border-width: 6px;
+									top: 50%;
+									margin-top: -6px;
+								}
+								.ssba_sharecount {
+									font: 11px Arial, Helvetica, sans-serif;
+
+									padding: 5px;
+									-khtml-border-radius: 6px;
+									-o-border-radius: 6px;
+									-webkit-border-radius: 6px;
+									-moz-border-radius: 6px;
+									border-radius: 6px;
+									position: relative;
+									border: 1px solid #e0dddd;color: #555e58;
+										background: #f5f5f5;
+									}
+									.ssba_sharecount:after {
+										border-right-color: #f5f5f5;
+									}</style>		<!-- Generated by AR2 Theme -->
+		<style type="text/css">
+			
+		</style>
+			<style type="text/css">
+		</style>
+		<style type="text/css">
+		body { 
+			background: #F0F0F0; 
+		}
+		#wrapper {
+			box-shadow: none;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/shCore.css"><link rel="stylesheet" type="text/css" href="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/shThemeDefault.css"><style type="text/css" id="syntaxhighlighteranchor"></style>
+
+<!-- Easy FancyBox 1.5.7 using FancyBox 1.3.7 - RavanH (http://status301.net/wordpress-plugins/easy-fancybox/) -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var fb_timeout = null;
+var fb_opts = { 'overlayShow' : true, 'hideOnOverlayClick' : true, 'showCloseButton' : true, 'centerOnScroll' : true, 'enableEscapeButton' : true, 'autoScale' : true };
+var easy_fancybox_handler = function(){
+	/* IMG */
+	var fb_IMG_select = 'a[href*=".jpg"]:not(.nofancybox,.pin-it-button), area[href*=".jpg"]:not(.nofancybox), a[href*=".jpeg"]:not(.nofancybox,.pin-it-button), area[href*=".jpeg"]:not(.nofancybox), a[href*=".png"]:not(.nofancybox,.pin-it-button), area[href*=".png"]:not(.nofancybox)';
+	jQuery(fb_IMG_select).addClass('fancybox image');
+	var fb_IMG_sections = jQuery('div.gallery ');
+	fb_IMG_sections.each(function() { jQuery(this).find(fb_IMG_select).attr('rel', 'gallery-' + fb_IMG_sections.index(this)); });
+	jQuery('a.fancybox, area.fancybox, li.fancybox a:not(li.nofancybox a)').fancybox( jQuery.extend({}, fb_opts, { 'transitionIn' : 'elastic', 'easingIn' : 'easeOutBack', 'transitionOut' : 'elastic', 'easingOut' : 'easeInBack', 'opacity' : false, 'hideOnContentClick' : false, 'titleShow' : true, 'titlePosition' : 'over', 'titleFromAlt' : true, 'showNavArrows' : true, 'enableKeyboardNav' : true, 'cyclic' : false }) );
+	/* Auto-click */ 
+	jQuery('#fancybox-auto').trigger('click');
+}
+/* ]]> */
+</script>
+<script type="text/javascript" async="" src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/embed.js"></script><script async="" type="text/javascript" src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/count.js"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow-x:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style><meta name="chromesniffer" id="chromesniffer_meta" content="{&quot;WordPress&quot;:&quot;4.2.2&quot;,&quot;Google Analytics&quot;:-1,&quot;Disqus&quot;:-1,&quot;jQuery&quot;:&quot;1.11.2&quot;,&quot;Facebook&quot;:-1,&quot;Modernizr&quot;:&quot;2.6.2&quot;}"><script type="text/javascript" src="chrome-extension://homgcnaoacgigpkkljjjekpignblkeae/detector.js"></script><script type="text/javascript" charset="utf-8" async="" src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/button.aec556e1a316f63b43fda3ae1e6a3e10.js"></script></head>
+
+<body class="single single-post postid-134 single-format-standard twocol-r">
+
+<div id="wrapper">
+
+<nav id="top-menu" class="clearfix" role="navigation">
+	</nav><!-- #top-menu -->
+
+<header id="header" role="banner">
+	<div id="branding" class="clearfix">
+				<div class="logo">
+			<span class="blog-name"><a href="http://devyourdream.net/">DevYourDream</a></span>
+			<span class="blog-description">One idea ? Code it !</span>
+		</div>
+				
+		<div class="banner">
+				</div>
+		
+	</div><!-- #branding -->
+</header><!-- #header -->
+
+<nav id="main-nav" role="navigation">
+	<ul id="menu-menu-principal" class="menu clearfix l_tinynav1"><li id="menu-item-66" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-66"><a href="http://devyourdream.net/">Accueil</a></li>
+<li id="menu-item-666" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-666"><a href="http://devyourdream.net/category/tutos-astuces/">Tutos &amp; Astuces</a></li>
+<li id="menu-item-652" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-652"><a href="http://devyourdream.net/projet-reader-de-flux-atom-rss/">Projet Reader de flux Atom/RSS</a></li>
+</ul><select id="tinynav1" class="tinynav tinynav1"><option value="/">Accueil</option><option value="http://devyourdream.net/category/tutos-astuces/">Tutos &amp; Astuces</option><option value="http://devyourdream.net/projet-reader-de-flux-atom-rss/" selected="selected">Projet Reader de flux Atom/RSS</option></select></nav><!-- #nav -->
+
+ 
+<div id="main" class="clearfix">
+   <div id="container" class="clearfix">
+
+<div id="content" class="section" role="main">
+
+		
+    
+<article id="post-134" class="post-134 post type-post status-publish format-standard has-post-thumbnail hentry category-tutos-astuces tag-doctrine2 tag-google tag-google-maps tag-php tag-symfony2 post-container clearfix">
+		
+	<header class="entry-header clearfix">
+		<div class="entry-cats"><a href="http://devyourdream.net/category/tutos-astuces/">Tutos &amp; Astuces</a></div>		
+		<h1 class="entry-title">
+				<a href="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream.html" rel="bookmark">Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2</a>
+		</h1>
+		
+				<div class="entry-author">
+			Rédigé par <address class="author vcard"><a rel="author" class="url fn n" href="http://devyourdream.net/author/soullivaneuh/" title="Sullivan SENECHAL">Sullivan SENECHAL</a></address> <abbr class="published">dans 28/08/2012</abbr>					</div>
+				
+				
+					<div class="entry-photo"><img width="620" height="350" src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/gmap-symfony2-doctrine2.png" class="attachment-single-thumb wp-post-image" alt="Il arrive souvent que dans certains projets web, vous vous retrouvez avec de nombreux types de données tels que des personnes, des entreprises, ou tout simplement des lieux devant contenir..." title="Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2"></div>
+				
+					
+	</header><!-- .entry-header -->
+    
+    <div class="entry-content clearfix">
+	<a id="dd_start"></a><p>Il arrive souvent que dans certains projets web, vous vous retrouvez avec de nombreux types de données tels que des personnes, des entreprises, ou tout simplement des lieux devant contenir des données géographiques. On se retrouve rapidement avec des schémas de <abbr title="Base De Données">bdd</abbr> très redondants car contenant les mêmes informations.</p>
+<p>Nous allons voir dans cette article comment palier à cela proprement, grâce aux <strong>Mapped Superclasses</strong> de Doctrine2.</p>
+<p>Une Mapped Superclass est une sorte de classe modèle permettant de définir des attributs spécifiques pour plusieurs classes enfants.<br>
+Si vous ne connaissez pas ce principe, je vous conseille vivement de jeter un œil sur la <a href="http://docs.doctrine-project.org/en/2.0.x/reference/inheritance-mapping.html#mapped-superclasses" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-article&#39;, &#39;http://docs.doctrine-project.org/en/2.0.x/reference/inheritance-mapping.html#mapped-superclasses&#39;, &#39;documentation officiel&#39;]);" title="Les Mapped Superclasses" target="_blank">documentation officiel</a> avant de lire la suite, une traduction est disponible <a href="http://guidella.free.fr/General/symfony2InheritanceMapping.html#sec2" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-article&#39;, &#39;http://guidella.free.fr/General/symfony2InheritanceMapping.html#sec2&#39;, &#39;ici&#39;]);" title="Les Mapped Superclasses FR" target="_blank">ici</a> pour les francophiles. <img src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/simple-smile.png" alt=":)" class="wp-smiley" style="height: 1em; max-height: 1em;"></p>
+<h2>La classe modèle</h2>
+<p>Pour commencer, nous allons définir notre Mapped Supperclass Google Maps :</p>
+<pre class="brush: php; highlight: [11,13,87,88,89,100,101,102]; title: ; notranslate" title="">&lt;?php
+namespace Test\TestBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Test\TestBundle\Entity\AbstractGMapEntity
+ *
+ * @author Sullivan SENECHAL
+ *
+ * @ORM\MappedSuperclass
+ */
+abstract class AbstractGMapEntity
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="address", type="string", length=255, nullable=true)
+     */
+    protected $address;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="locality", type="string", length=255, nullable=true)
+     */
+    protected $locality;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="country", type="string", length=255, nullable=true)
+     */
+    protected $country;
+
+    /**
+     * @var float     Latitude of the position
+     *
+     * @ORM\Column(name="lat", type="float", nullable=true)
+     */
+    protected $lat;
+
+    /**
+     * @var float     Longitude of the position
+     *
+     * @ORM\Column(name="lng", type="float", nullable=true)
+     */
+    protected $lng;
+
+    public function setAddress($address)
+    {
+        $this-&gt;address = $address;
+    }
+
+    public function getAddress()
+    {
+        return $this-&gt;address;
+    }
+
+    public function setLocality($locality)
+    {
+        $this-&gt;locality = $locality;
+    }
+
+    public function getLocality()
+    {
+        return $this-&gt;locality;
+    }
+
+    public function setCountry($country)
+    {
+        $this-&gt;country = $country;
+    }
+
+    public function getCountry()
+    {
+        return $this-&gt;country;
+    }
+
+    public function getLat()
+    {
+        return $this-&gt;lat;
+    }
+
+    public function setLat($lat)
+    {
+        if (is_string($lat)) {
+            $lat = floatval($lat);
+        }
+        $this-&gt;lat = $lat;
+    }
+
+    public function getLng()
+    {
+        return $this-&gt;lng;
+    }
+
+    public function setLng($lng)
+    {
+        if (is_string($lng)) {
+            $lng = floatval($lng);
+        }
+        $this-&gt;lng = $lng;
+    }
+}
+?&gt;</pre>
+<p>Notons certaines choses :</p>
+<ul>
+<li>La classe est <strong>abstraite</strong>, en effet, il s’agit d’une classe modèle qui ne pourra pas être utilisée en tant qu’entité propre.</li>
+<li>Il faut <strong>impérativement</strong> préciser à Doctrine qu’il s’agit d’une MappedSuperclass dans le commentaire d’en-tête.</li>
+<li>L’adresse, la longitude et la longitude sont des champs <strong>obligatoires</strong> pour que les données soit exploitables par Google Maps.<br>
+La ville est le pays sont ajoutés à titre d’exemple et seront utiles pour mes prochains articles… <img src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/simple-smile.png" alt=":)" class="wp-smiley" style="height: 1em; max-height: 1em;"></li>
+<li>Attention, la longitude et la latitude sont des <strong>floats</strong> ! Veillez à faire en sorte que les informations soient enregistrées correctement comme dans l’exemple ci-dessus.</li>
+</ul>
+<h2>Intégrer le modèle à nos entités</h2>
+<p>Maintenant que notre modèle est fait, il faut l’appliquer sur nos véritables entités !<br>
+Pour ce faire, rien de plus simple ! Il suffit de faire <strong>hériter</strong> notre classe par notre modèle.</p>
+<p>Voici un exemple avec une entité contenant des informations sur une personne :</p>
+<pre class="brush: php; highlight: [7,16]; title: ; notranslate" title="">&lt;?php
+
+namespace Test\TestBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+use Test\TestBundle\Entity\AbstractGMapEntity;
+
+/**
+ * Person
+ *
+ * @author Sullivan SENECHAL
+ *
+ * @ORM\Table(name="person")
+ */
+class Person extends AbstractGMapEntity
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="first_name", type="string", length=255, nullable=false)
+     */
+    protected $firstName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="last_name", type="string", length=255, nullable=false)
+     */
+    protected $lastName;
+
+    // Vos autres attibuts et méthodes...
+}
+?&gt;</pre>
+<ul>
+<li>N’oubliez pas d’importer la classe modèle Google Maps via le mot clé <strong>use</strong> !</li>
+<li>Intégrez les attributs et méthodes de la classe modèle par un héritage de classe (extends)</li>
+</ul>
+<p>Mettez à jour votre <abbr title="Base De Données">bdd</abbr> via la console symfony, et le tour est joué !</p>
+<p>Vous n’avez plus qu’à faire de même pour les autres entités correspondantes…</p>
+<h2>Conclusion</h2>
+<p>Pensez régulièrement à <strong>factoriser</strong> vos entités Doctrine si vous vous retrouvez face à des données communes, cela aide beaucoup à avoir un code propre et organisé ! <img class="emoji" draggable="false" alt="😉" src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/1f609.png"></p>
+<p>Je vous conseille de séparer vos classes modèles, par exemple dans un bundle à part nommé UtilsBundle ! <img class="emoji" draggable="false" alt="😉" src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/1f609.png"></p>
+<p>Une meilleure solution ? Une astuce à ajouter ? N’hésitez pas à m’en parler ! <img class="emoji" draggable="false" alt="😀" src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/1f600.png"></p>
+<p>Voyons maintenant <a title="jQuery Address Picker &amp; Symfony2 : Google Map dans vos formulaires !" href="http://devyourdream.net/2012/09/24/jquery-address-picker-symfony2-google-map-dans-vos-formulaires/">comment intégrer ceci dans nos formulaires avec jQuery Address Picker</a>…</p>
+<script type="text/javascript">var dd_offset_from_content = 40;var dd_top_offset_from_content = 50;var dd_override_start_anchor_id = "";var dd_override_top_offset = "";</script><script type="text/javascript" src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/diggdigg-floating-bar.js"></script><script type="text/javascript"> jQuery(document).ready(function($) { window.setTimeout('loadTwitter_134()',1000);window.setTimeout('loadGoogle1_134()',1000); }); </script><script type="text/javascript"> function loadTwitter_134(){ jQuery(document).ready(function($) { $('.dd-twitter-134').remove();$.getScript('http://platform.twitter.com/widgets.js'); }); } function loadGoogle1_134(){ jQuery(document).ready(function($) { $('.dd-google1-134').remove();$.getScript('https://apis.google.com/js/plusone.js'); }); }</script><!-- Simple Share Buttons Adder (6.0.2) simplesharebuttons.com --><div class="ssba ssba-wrap"><div style="text-align:left"><a href="http://www.facebook.com/sharer.php?u=http://devyourdream.net/2012/08/28/integrer-google-maps-dans-vos-entites-sur-symfony2-avec-doctrine2/" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-article&#39;, &#39;http://www.facebook.com/sharer.php?u=http://devyourdream.net/2012/08/28/integrer-google-maps-dans-vos-entites-sur-symfony2-avec-doctrine2/&#39;, &#39;&#39;]);" class="ssba_facebook_share" target="_blank"><img src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/facebook.png" title="Facebook" class="ssba ssba-img" alt="Share on Facebook"></a><span class="ssba_sharecount">4</span><a href="http://twitter.com/share?url=http://devyourdream.net/2012/08/28/integrer-google-maps-dans-vos-entites-sur-symfony2-avec-doctrine2/&text=Int%C3%A9grer+Google+Maps+dans+vos+Entit%C3%A9s+sur+Symfony2+avec+Doctrine2+" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-article&#39;, &#39;http://twitter.com/share?url=http://devyourdream.net/2012/08/28/integrer-google-maps-dans-vos-entites-sur-symfony2-avec-doctrine2/&amp;text=Int%C3%A9grer+Google+Maps+dans+vos+Entit%C3%A9s+sur+Symfony2+avec+Doctrine2+&#39;, &#39;&#39;]);" class="ssba_twitter_share" target="_blank"><img src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/twitter.png" title="Twitter" class="ssba ssba-img" alt="Tweet about this on Twitter"></a><span class="ssba_sharecount">6</span><a href="https://plus.google.com/share?url=http://devyourdream.net/2012/08/28/integrer-google-maps-dans-vos-entites-sur-symfony2-avec-doctrine2/" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-article&#39;, &#39;https://plus.google.com/share?url=http://devyourdream.net/2012/08/28/integrer-google-maps-dans-vos-entites-sur-symfony2-avec-doctrine2/&#39;, &#39;&#39;]);" class="ssba_google_share" target="_blank"><img src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/google.png" title="Google+" class="ssba ssba-img" alt="Share on Google+"></a><span class="ssba_sharecount">3</span><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://devyourdream.net/2012/08/28/integrer-google-maps-dans-vos-entites-sur-symfony2-avec-doctrine2/" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-article&#39;, &#39;http://www.linkedin.com/shareArticle?mini=true&amp;url=http://devyourdream.net/2012/08/28/integrer-google-maps-dans-vos-entites-sur-symfony2-avec-doctrine2/&#39;, &#39;&#39;]);" class="ssba_linkedin_share ssba_share_link" target="_blank"><img src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/linkedin.png" title="LinkedIn" class="ssba ssba-img" alt="Share on LinkedIn"></a><span class="ssba_sharecount">0</span></div></div>  
+    	</div>
+
+	<footer class="entry-footer clearfix">
+	
+					<div class="entry-tags tags">
+				<strong>Mots-clefs: </strong><a href="http://devyourdream.net/tag/doctrine2/" rel="tag">Doctrine2</a> <a href="http://devyourdream.net/tag/google/" rel="tag">Google</a> <a href="http://devyourdream.net/tag/google-maps/" rel="tag">Google Maps</a> <a href="http://devyourdream.net/tag/php/" rel="tag">PHP</a> <a href="http://devyourdream.net/tag/symfony2/" rel="tag">Symfony2</a>			</div>
+		
+                
+    </footer><!-- .entry-footer -->
+</article>    
+	    
+<div id="disqus_thread"><iframe id="dsq-app1" name="dsq-app1" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/saved_resource.html" style="width: 100% !important; border: none !important; overflow: hidden !important; height: 0px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+
+<script type="text/javascript">
+var disqus_url = 'http://devyourdream.net/2012/08/28/integrer-google-maps-dans-vos-entites-sur-symfony2-avec-doctrine2/';
+var disqus_identifier = '134 http://devyourdream.net/?p=134';
+var disqus_container_id = 'disqus_thread';
+var disqus_shortname = 'devyourdream';
+var disqus_title = "Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2";
+var disqus_config_custom = window.disqus_config;
+var disqus_config = function () {
+    /*
+    All currently supported events:
+    onReady: fires when everything is ready,
+    onNewComment: fires when a new comment is posted,
+    onIdentify: fires when user is authenticated
+    */
+    
+    
+    this.language = '';
+        this.callbacks.onReady.push(function () {
+
+        // sync comments in the background so we don't block the page
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = '?cf_action=sync_comments&post_id=134';
+
+        var firstScript = document.getElementsByTagName('script')[0];
+        firstScript.parentNode.insertBefore(script, firstScript);
+    });
+    
+    if (disqus_config_custom) {
+        disqus_config_custom.call(this);
+    }
+};
+
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+	    
+
+</div><!-- #content -->
+
+</div><!-- #container -->
+
+
+<div id="primary" class="aside main-aside sidebar" role="complementary">
+
+	<aside id="search-2" class="widget_search widget clearfix">
+<form method="get" id="searchform" class="clearfix" action="http://devyourdream.net/">
+	<input type="text" class="field" name="s" id="s" placeholder="Search the site...">
+	<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search">
+</form></aside><aside id="social_stickers_widget-3" class="social_stickers_widget widget clearfix"><a href="http://github.com/Soullivaneuh" target="_blank" title="Github"><img src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/github.png" width="32" height="32"></a> <a href="http://twitter.com/Soullivaneuh" target="_blank" title="Twitter"><img src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/twitter(1).png" width="32" height="32"></a> <a href="http://plus.google.com/+SullivanSENECHAL" target="_blank" title="Google+"><img src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/googleplus.png" width="32" height="32"></a> <a href="http://linkedin.com/in/sullivansenechal" target="_blank" title="Linkedin"><img src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/linkedin(1).png" width="32" height="32"></a> <a href="http://stackoverflow.com/users/1731473/soullivaneuh" target="_blank" title="Stackoverflow"><img src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/stackoverflow.png" width="32" height="32"></a> <a href="http://gravatar.com/Soullivaneuh" target="_blank" title="Gravatar"><img src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/gravatar.png" width="32" height="32"></a> <a href="http://grooveshark.com/soullivaneuh" target="_blank" title="Grooveshark"><img src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/grooveshark.png" width="32" height="32"></a> <a href="http://steamcommunity.com/id/soullivaneuh" target="_blank" title="Steam"><img src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/steam.png" width="32" height="32"></a> <a href="https://foursquare.com/soullivaneuh" target="_blank" title="Foursquare"><img src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/foursquare.png" width="32" height="32"></a> <a href="http://devyourdream.net/feed/" target="_blank" title="RSS"><img src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/rss.png" width="32" height="32"></a> </aside><aside id="text-6" class="widget_text widget clearfix"><h3 class="widget-title">Enquête de projet</h3>			<div class="textwidget"><p>Nous avons besoin de <b>vous</b> pour une petite enquête concernant une ébauche de projet.</p>
+<p>Si vous êtes addict des clients Atom/RSS, cela vous concerne au plus au point ! ;)</p>
+<p>Cela vous prendra 20 secondes, c'est par <a href="http://devyourdream.net/projet-reader-de-flux-atom-rss">ici</a> que ça se passe !</p>
+<p>Merci :)</p>
+</div>
+		</aside><aside id="tag_cloud-3" class="widget_tag_cloud widget clearfix"><h3 class="widget-title">Étiquettes</h3><div class="tagcloud"><a href="http://devyourdream.net/tag/addresspicker/" class="tag-link-35" title="1 sujet" style="font-size: 8pt;">AddressPicker</a>
+<a href="http://devyourdream.net/tag/assetic/" class="tag-link-24" title="1 sujet" style="font-size: 8pt;">assetic</a>
+<a href="http://devyourdream.net/tag/autoload/" class="tag-link-60" title="1 sujet" style="font-size: 8pt;">autoload</a>
+<a href="http://devyourdream.net/tag/code-folding/" class="tag-link-16" title="1 sujet" style="font-size: 8pt;">code folding</a>
+<a href="http://devyourdream.net/tag/doctrine1-2/" class="tag-link-46" title="1 sujet" style="font-size: 8pt;">Doctrine1.2</a>
+<a href="http://devyourdream.net/tag/doctrine2/" class="tag-link-19" title="1 sujet" style="font-size: 8pt;">Doctrine2</a>
+<a href="http://devyourdream.net/tag/encoder/" class="tag-link-43" title="1 sujet" style="font-size: 8pt;">encoder</a>
+<a href="http://devyourdream.net/tag/facebook/" class="tag-link-50" title="1 sujet" style="font-size: 8pt;">Facebook</a>
+<a href="http://devyourdream.net/tag/fix/" class="tag-link-47" title="1 sujet" style="font-size: 8pt;">fix</a>
+<a href="http://devyourdream.net/tag/formtype/" class="tag-link-33" title="1 sujet" style="font-size: 8pt;">FormType</a>
+<a href="http://devyourdream.net/tag/formulaires/" class="tag-link-61" title="1 sujet" style="font-size: 8pt;">formulaires</a>
+<a href="http://devyourdream.net/tag/fosfacebookbundle/" class="tag-link-51" title="1 sujet" style="font-size: 8pt;">FOSFacebookBundle</a>
+<a href="http://devyourdream.net/tag/fosrestbundle/" class="tag-link-54" title="1 sujet" style="font-size: 8pt;">FOSRestBundle</a>
+<a href="http://devyourdream.net/tag/fosuserbundle/" class="tag-link-41" title="2 sujets" style="font-size: 11.876923076923pt;">FOSUserBundle</a>
+<a href="http://devyourdream.net/tag/google/" class="tag-link-20" title="1 sujet" style="font-size: 8pt;">Google</a>
+<a href="http://devyourdream.net/tag/google-maps/" class="tag-link-21" title="2 sujets" style="font-size: 11.876923076923pt;">Google Maps</a>
+<a href="http://devyourdream.net/tag/httpfoundation/" class="tag-link-52" title="1 sujet" style="font-size: 8pt;">HttpFoundation</a>
+<a href="http://devyourdream.net/tag/jmsserializer/" class="tag-link-55" title="1 sujet" style="font-size: 8pt;">JMSSerializer</a>
+<a href="http://devyourdream.net/tag/jquery/" class="tag-link-34" title="1 sujet" style="font-size: 8pt;">JQuery</a>
+<a href="http://devyourdream.net/tag/less/" class="tag-link-25" title="1 sujet" style="font-size: 8pt;">less</a>
+<a href="http://devyourdream.net/tag/linux/" class="tag-link-28" title="1 sujet" style="font-size: 8pt;">linux</a>
+<a href="http://devyourdream.net/tag/method/" class="tag-link-53" title="1 sujet" style="font-size: 8pt;">method</a>
+<a href="http://devyourdream.net/tag/migration/" class="tag-link-40" title="2 sujets" style="font-size: 11.876923076923pt;">migration</a>
+<a href="http://devyourdream.net/tag/netbeans-editeurs/" class="tag-link-15" title="1 sujet" style="font-size: 8pt;">NetBeans</a>
+<a href="http://devyourdream.net/tag/node/" class="tag-link-29" title="1 sujet" style="font-size: 8pt;">node</a>
+<a href="http://devyourdream.net/tag/npm/" class="tag-link-30" title="1 sujet" style="font-size: 8pt;">npm</a>
+<a href="http://devyourdream.net/tag/php/" class="tag-link-22" title="4 sujets" style="font-size: 16.615384615385pt;">PHP</a>
+<a href="http://devyourdream.net/tag/programmation/" class="tag-link-17" title="1 sujet" style="font-size: 8pt;">Programmation</a>
+<a href="http://devyourdream.net/tag/security/" class="tag-link-42" title="2 sujets" style="font-size: 11.876923076923pt;">security</a>
+<a href="http://devyourdream.net/tag/sha1/" class="tag-link-44" title="1 sujet" style="font-size: 8pt;">sha1</a>
+<a href="http://devyourdream.net/tag/sonataadminbundle/" class="tag-link-48" title="2 sujets" style="font-size: 11.876923076923pt;">SonataAdminBundle</a>
+<a href="http://devyourdream.net/tag/symfony/" class="tag-link-45" title="1 sujet" style="font-size: 8pt;">Symfony</a>
+<a href="http://devyourdream.net/tag/symfony1-4/" class="tag-link-39" title="2 sujets" style="font-size: 11.876923076923pt;">Symfony1.4</a>
+<a href="http://devyourdream.net/tag/symfony2/" class="tag-link-18" title="8 sujets" style="font-size: 22pt;">Symfony2</a>
+<a href="http://devyourdream.net/tag/twig/" class="tag-link-31" title="2 sujets" style="font-size: 11.876923076923pt;">twig</a>
+<a href="http://devyourdream.net/tag/twitter-bootstrap/" class="tag-link-49" title="1 sujet" style="font-size: 8pt;">Twitter Bootstrap</a>
+<a href="http://devyourdream.net/tag/ubuntu/" class="tag-link-27" title="1 sujet" style="font-size: 8pt;">Ubuntu</a>
+<a href="http://devyourdream.net/tag/virtual/" class="tag-link-32" title="1 sujet" style="font-size: 8pt;">virtual</a>
+<a href="http://devyourdream.net/tag/xdebug/" class="tag-link-59" title="1 sujet" style="font-size: 8pt;">Xdebug</a>
+<a href="http://devyourdream.net/tag/yaml/" class="tag-link-56" title="1 sujet" style="font-size: 8pt;">YAML</a>
+<a href="http://devyourdream.net/tag/yui-compressor/" class="tag-link-26" title="1 sujet" style="font-size: 8pt;">YUI Compressor</a></div>
+</aside><aside id="linkcat-57" class="widget_links widget clearfix"><h3 class="widget-title">Mes amis blogueurs</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://www.funstaff.ch/" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-widget&#39;, &#39;http://www.funstaff.ch/&#39;, &#39;Funstaff.ch&#39;]);" title="Blog de Bertrand Zuchuat, sur le framework Symfony. " target="_blank">Funstaff.ch</a>
+Blog de Bertrand Zuchuat, sur le framework Symfony. </li>
+<li><a href="http://www.lexik.fr/blog/symfony/" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-widget&#39;, &#39;http://www.lexik.fr/blog/symfony/&#39;, &#39;Lexik, le blog Symfony&#39;]);" title="Blog spécialisé Symfony de l’agence web Lexik." target="_blank">Lexik, le blog Symfony</a>
+Blog spécialisé Symfony de l’agence web Lexik.</li>
+
+	</ul>
+</aside>
+<aside id="meta-2" class="widget_meta widget clearfix"><h3 class="widget-title">Méta</h3>			<ul>
+						<li><a rel="nofollow" href="http://devyourdream.net/wp/wp-login.php">Connexion</a></li>
+			<li><a href="http://devyourdream.net/feed/">Flux <abbr title="Really Simple Syndication">RSS</abbr> des articles</a></li>
+			<li><a href="https://devyourdream.disqus.com/latest.rss"><abbr title="Really Simple Syndication">RSS</abbr> des commentaires</a></li>
+<li><a href="http://www.wordpress-fr.net/" title="Propulsé par WordPress, plate-forme de publication personnelle sémantique de pointe.">Site de WordPress-FR</a></li>			</ul>
+</aside>	
+</div><!-- #primary-sidebar -->
+	</div><!-- #main -->
+
+	   
+	<footer id="footer" class="clearfix" role="contentinfo">
+	
+		<div class="footer-sidebar-container clearfix">
+							<div id="footer-sidebar-1" class="footer-sidebar clearfix xoxo">
+														</div>
+							<div id="footer-sidebar-2" class="footer-sidebar clearfix xoxo">
+					<aside id="ja-github-3" class="guthub-repo-widget widget clearfix"><h3 class="widget-title">Projets GitHub</h3><ul><li><a href="https://github.com/Soullivaneuh/AdminLTE">AdminLTE</a></li><li><a href="https://github.com/Soullivaneuh/alice">alice</a></li><li><a href="https://github.com/Soullivaneuh/AliceBundle">AliceBundle</a></li><li><a href="https://github.com/Soullivaneuh/AsseticBundle">AsseticBundle</a></li><li><a href="https://github.com/Soullivaneuh/bedrock">bedrock</a></li><li><a href="https://github.com/Soullivaneuh/browscap-php">browscap-php</a></li><li><a href="https://github.com/Soullivaneuh/BrowscapBundle">BrowscapBundle</a></li><li><a href="https://github.com/Soullivaneuh/capistrano-symfony">capistrano-symfony</a></li><li><a href="https://github.com/Soullivaneuh/capistrano-upload-config">capistrano-upload-config</a></li><li><a href="https://github.com/Soullivaneuh/capistrano-wpcli">capistrano-wpcli</a></li><li><a href="https://github.com/Soullivaneuh/composer">composer</a></li><li><a href="https://github.com/Soullivaneuh/composer-changelogs">composer-changelogs</a></li><li><a href="https://github.com/Soullivaneuh/composer-versions-check">composer-versions-check</a></li><li><a href="https://github.com/Soullivaneuh/daux.io">daux.io</a></li><li><a href="https://github.com/Soullivaneuh/doctrine2">doctrine2</a></li><li><a href="https://github.com/Soullivaneuh/DoctrineBundle">DoctrineBundle</a></li><li><a href="https://github.com/Soullivaneuh/DoctrineMongoDBBundle">DoctrineMongoDBBundle</a></li><li><a href="https://github.com/Soullivaneuh/DoctrinePHPCRBundle">DoctrinePHPCRBundle</a></li><li><a href="https://github.com/Soullivaneuh/dompdf">dompdf</a></li><li><a href="https://github.com/Soullivaneuh/Embed">Embed</a></li><li><a href="https://github.com/Soullivaneuh/ember-github">ember-github</a></li><li><a href="https://github.com/Soullivaneuh/Faker">Faker</a></li><li><a href="https://github.com/Soullivaneuh/fig-standards">fig-standards</a></li><li><a href="https://github.com/Soullivaneuh/file-permissions">file-permissions</a></li><li><a href="https://github.com/Soullivaneuh/FOSJsRoutingBundle">FOSJsRoutingBundle</a></li><li><a href="https://github.com/Soullivaneuh/FOSMessage">FOSMessage</a></li><li><a href="https://github.com/Soullivaneuh/FOSOAuthServerBundle">FOSOAuthServerBundle</a></li><li><a href="https://github.com/Soullivaneuh/FOSRestBundle">FOSRestBundle</a></li><li><a href="https://github.com/Soullivaneuh/FOSUserBundle">FOSUserBundle</a></li><li><a href="https://github.com/Soullivaneuh/GenemuFormBundle">GenemuFormBundle</a></li></ul><iframe src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/github-btn.html" allowtransparency="true" frameborder="0" scrolling="0" width="165px" height="20px" style="display:block;margin:15px auto 0;"></iframe></aside>				</div>
+							<div id="footer-sidebar-3" class="footer-sidebar clearfix xoxo">
+					<aside id="text-5" class="widget_text widget clearfix"><h3 class="widget-title">Sullivan SENECHAL</h3>			<div class="textwidget"><div style="margin-top:5px">
+
+<div style="float:left">
+<a href="https://plus.google.com/103476126673426545809?rel=author" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-widget&#39;, &#39;https://plus.google.com/103476126673426545809?rel=author&#39;, &#39;\n\n&#39;]);">
+<img src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/e63f9df521795ecff55b8b769931686f" alt="Sullivan SENECHAL">
+</a>
+</div>
+<p style="margin-left: 75px;">
+Développeur Informatique<br>
+Etudiant à Efficom
+</p>
+
+</div></div>
+		</aside>				</div>
+							<div id="footer-sidebar-4" class="footer-sidebar clearfix xoxo">
+														</div>
+					</div>
+		
+		<nav class="footer-meta">
+			<ul id="menu-top-menus-1" class="menu clearfix l_tinynav2">
+				<ul class="menu clearfix l_tinynav3">	<li class="cat-item cat-item-58"><a href="http://devyourdream.net/category/tutos-astuces/">Tutos &amp; Astuces</a>
+</li>
+</ul><select id="tinynav3" class="tinynav tinynav3"><option value="http://devyourdream.net/category/tutos-astuces/" selected="selected">- Tutos &amp; Astuces</option></select>				<li class="menu-item"><a href="http://devyourdream.net/2012/08/28/integrer-google-maps-dans-vos-entites-sur-symfony2-avec-doctrine2/#header"><strong>Haut de la page</strong></a></li>
+			</ul><select id="tinynav2" class="tinynav tinynav2"><option value="http://devyourdream.net/category/tutos-astuces/">- Tutos &amp; Astuces</option><option value="#header" selected="selected">Haut de la page</option></select>
+		
+			<p>Copyright DevYourDream. All Rights Reserved</p>		
+		</nav><!-- .footer-meta -->
+		
+	</footer>
+
+</div><!-- #wrapper -->
+
+        <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="Facebook Cross Domain Communication Frame" aria-hidden="true" tabindex="-1" id="fb_xdm_frame_http" src="http://static.ak.facebook.com/connect/xd_arbiter/wjDNIDNrTQG.js?version=41#channel=f178b43f68&origin=http%3A%2F%2Fdevyourdream.net" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="Facebook Cross Domain Communication Frame" aria-hidden="true" tabindex="-1" id="fb_xdm_frame_https" src="https://s-static.ak.facebook.com/connect/xd_arbiter/wjDNIDNrTQG.js?version=41#channel=f178b43f68&origin=http%3A%2F%2Fdevyourdream.net" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div><script type="text/javascript">
+        // <![CDATA[
+        var disqus_shortname = 'devyourdream';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1) {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script'); 
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        // ]]>
+        </script>
+        <script type="text/javascript" src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/shCore.js"></script>
+<script type="text/javascript" src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/shBrushPhp.js"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://devyourdream.net/app/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://devyourdream.net/app/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type="text/javascript" src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/jquery.fancybox-1.3.7.min.js"></script>
+<script type="text/javascript" src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/jquery.easing.pack.js"></script>
+<script type="text/javascript" src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/jquery.mousewheel.min.js"></script>
+	<script type="text/javascript">
+	/* <![CDATA[ */
+	( function( $ ) {
+
+$( document ).ready( function( $ ) {
+
+	$( '.menu' ).tinyNav();
+	
+		
+} );
+
+} )( jQuery );	/* ]]> */
+	</script>
+	
+<script type="text/javascript">
+jQuery(document).on('ready post-load', easy_fancybox_handler );
+</script>
+
+
+   <div class="dd_outer"><div class="dd_inner" style="width: 934px;"><div id="dd_ajax_float" style="position: absolute; top: 796px; left: -95px; display: block;"><div class="dd_button_v"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="about:blank" style="position: absolute; visibility: hidden; width: 0px; height: 0px;"></iframe><a href="http://twitter.com/share" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-article&#39;, &#39;http://twitter.com/share&#39;, &#39;&#39;]);" class="twitter-share-button" data-url="http://devyourdream.net/2012/08/28/integrer-google-maps-dans-vos-entites-sur-symfony2-avec-doctrine2/" data-count="vertical" data-text="Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2" data-via="Soullivaneuh" data-twitter-extracted-i1446031729068235646="true"></a></div><div style="clear:left"></div><div class="dd_button_v"><script src="./Intégrer Google Maps dans vos Entités sur Symfony2 avec Doctrine2 - DevYourDreamDevYourDream_files/all.js" gapi_processed="true"></script><fb:like href="http://devyourdream.net/2012/08/28/integrer-google-maps-dans-vos-entites-sur-symfony2-avec-doctrine2/" send="true" show_faces="false" layout="box_count" width="50" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;container_width=0&amp;href=http%3A%2F%2Fdevyourdream.net%2F2012%2F08%2F28%2Fintegrer-google-maps-dans-vos-entites-sur-symfony2-avec-doctrine2%2F&amp;layout=box_count&amp;locale=fr_FR&amp;sdk=joey&amp;send=true&amp;show_faces=false&amp;width=50"><span style="vertical-align: bottom; width: 59px; height: 86px;"><iframe name="f238ae8e24" width="50px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/plugins/like.php?app_id=&channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FwjDNIDNrTQG.js%3Fversion%3D41%23cb%3Df2b5d77e7c%26domain%3Ddevyourdream.net%26origin%3Dhttp%253A%252F%252Fdevyourdream.net%252Ff178b43f68%26relation%3Dparent.parent&container_width=0&href=http%3A%2F%2Fdevyourdream.net%2F2012%2F08%2F28%2Fintegrer-google-maps-dans-vos-entites-sur-symfony2-avec-doctrine2%2F&layout=box_count&locale=fr_FR&sdk=joey&send=true&show_faces=false&width=50" style="border: none; visibility: visible; width: 59px; height: 86px;" class=""></iframe></span></fb:like></div><div style="clear:left"></div><div class="dd_button_v"><div id="___plusone_0" style="position: absolute; width: 450px; left: -10000px;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none" tabindex="0" vspace="0" width="100%" id="I0_1446031728776" name="I0_1446031728776" src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&size=tall&origin=http%3A%2F%2Fdevyourdream.net&url=http%3A%2F%2Fdevyourdream.net%2F2012%2F08%2F28%2Fintegrer-google-maps-dans-vos-entites-sur-symfony2-avec-doctrine2%2F&gsrc=3p&ic=1&jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.fr.pEHCKz-Ivi8.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAGLTcCN8o2f0_X_wK_ZEe1XslqaayRevcQ#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh&id=I0_1446031728776&parent=http%3A%2F%2Fdevyourdream.net&pfname=&rpctoken=28464694" data-gapiattached="true"></iframe></div><g:plusone size="tall" href="http://devyourdream.net/2012/08/28/integrer-google-maps-dans-vos-entites-sur-symfony2-avec-doctrine2/" data-gapiscan="true" data-onload="true" data-gapistub="true"></g:plusone></div><div style="clear:left"></div></div></div></div><div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><iframe name="oauth2relay338881387" id="oauth2relay338881387" src="about:blank" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>

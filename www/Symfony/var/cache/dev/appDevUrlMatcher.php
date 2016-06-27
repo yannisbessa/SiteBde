@@ -101,14 +101,19 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         if (0 === strpos($pathinfo, '/bsite')) {
-            // BDE_site_Baccueil
+            // BDE_backsite_Baccueil
             if ($pathinfo === '/bsite/Baccueil') {
-                return array (  '_controller' => 'BDE\\BackSiteBundle\\Controller\\BBdeController::BaccueilAction',  '_route' => 'BDE_site_Baccueil',);
+                return array (  '_controller' => 'BDE\\BackSiteBundle\\Controller\\BBdeController::BaccueilAction',  '_route' => 'BDE_backsite_Baccueil',);
             }
 
-            // BDE_site_Backpage
+            // BDE_backsite_Backpage
             if ($pathinfo === '/bsite/backpage') {
-                return array (  '_controller' => 'BDE\\BackSiteBundle\\Controller\\BBdeController::backpageAction',  '_route' => 'BDE_site_Backpage',);
+                return array (  '_controller' => 'BDE\\BackSiteBundle\\Controller\\BBdeController::backpageAction',  '_route' => 'BDE_backsite_Backpage',);
+            }
+
+            // BDE_backsite_ajouter
+            if ($pathinfo === '/bsite/ajouter') {
+                return array (  '_controller' => 'BDE\\BackSiteBundle\\Controller\\BBdeController::ajouterAction',  '_route' => 'BDE_backsite_ajouter',);
             }
 
         }
@@ -183,14 +188,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'BDE\\SiteBundle\\Controller\\BdeController::ISEPAction',  '_route' => 'BDE_site_ISEP',);
             }
 
-            // BDE_site_AccueilEleve
-            if ($pathinfo === '/site/AEleve') {
-                return array (  '_controller' => 'BDE\\SiteBundle\\Controller\\BdeController::AccueilEleveAction',  '_route' => 'BDE_site_AccueilEleve',);
-            }
-
-            // BDE_site_Discussion
-            if ($pathinfo === '/site/Disc') {
-                return array (  '_controller' => 'BDE\\SiteBundle\\Controller\\BdeController::DiscussionAction',  '_route' => 'BDE_site_Discussion',);
+            // BDE_site_EAccueil
+            if ($pathinfo === '/site/EAccueil') {
+                return array (  '_controller' => 'BDE\\SiteBundle\\Controller\\BdeController::EAccueilAction',  '_route' => 'BDE_site_EAccueil',);
             }
 
         }
@@ -204,7 +204,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                         goto not_fos_user_security_login;
                     }
 
-                    return array (  '_controller' => 'BDE\\UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'fos_user_security_login',);
+                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'fos_user_security_login',);
                 }
                 not_fos_user_security_login:
 
@@ -215,7 +215,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                         goto not_fos_user_security_check;
                     }
 
-                    return array (  '_controller' => 'BDE\\UserBundle\\Controller\\SecurityController::checkAction',  '_route' => 'fos_user_security_check',);
+                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::checkAction',  '_route' => 'fos_user_security_check',);
                 }
                 not_fos_user_security_check:
 
@@ -228,7 +228,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     goto not_fos_user_security_logout;
                 }
 
-                return array (  '_controller' => 'BDE\\UserBundle\\Controller\\SecurityController::logoutAction',  '_route' => 'fos_user_security_logout',);
+                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::logoutAction',  '_route' => 'fos_user_security_logout',);
             }
             not_fos_user_security_logout:
 
@@ -389,6 +389,19 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // fullcalendar_loader
         if ($pathinfo === '/fc-load-events') {
             return array (  '_controller' => 'ADesigns\\CalendarBundle\\Controller\\CalendarController::loadCalendarAction',  '_route' => 'fullcalendar_loader',);
+        }
+
+        if (0 === strpos($pathinfo, '/log')) {
+            // login_check
+            if ($pathinfo === '/login_check') {
+                return array('_route' => 'login_check');
+            }
+
+            // logout
+            if ($pathinfo === '/logout') {
+                return array('_route' => 'logout');
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

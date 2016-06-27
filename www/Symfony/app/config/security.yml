@@ -1,32 +1,44 @@
 security:
     encoders:
-        FOS\UserBundle\Model\UserInterface: bcrypt
-
+        BDE\UserBundle\Entity\User: sha512
+    erase_credentials: false   #ldap  
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: ROLE_ADMIN
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
+        chain_provider:
+            chain:
+                providers: [fos_userbundle, fr3d_ldapbundle]
+        fr3d_ldapbundle:
+            id: fr3d_ldap.security.user.provider
         fos_userbundle:
             id: fos_user.user_provider.username
 
     firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
         main:
-            pattern: ^/
+            pattern:   ^/
+            anonymous: true
+            fr3d_ldap: ~
             form_login:
-                provider: fos_userbundle
+                provider: 
                 csrf_token_generator: security.csrf.token_manager
-                default_target_path: /site/Accueil
-                # if you are using Symfony < 2.8, use the following config instead:
-                # csrf_provider: form.csrf_provider
+                login_path: fos_user_security_login
+                check_path: fos_user_security_check
+                default_target_path: /site/EAccueil
+               
             logout:
                 path:   fos_user_security_logout
-                target: /login   
-
-            anonymous:    true
+                target: /site/Accueil
+        api:
+            pattern: ^/api
+            fr3d_ldap_httpbasic: ~
 
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: ^/admin/, role: ROLE_ADMIN }        

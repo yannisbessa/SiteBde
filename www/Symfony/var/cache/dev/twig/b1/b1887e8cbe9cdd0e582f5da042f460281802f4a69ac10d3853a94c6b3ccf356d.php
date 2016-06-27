@@ -8,7 +8,7 @@ class __TwigTemplate_50d85bf429b022fc46fb6207ac27c75201f5fafd053baceb1aff6318576
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("BDESiteBundle::Layout.html.twig", "@BDEUser/Security/login.html.twig", 1);
+        $this->parent = $this->loadTemplate("BDEUserBundle::Layout.html.twig", "@BDEUser/Security/login.html.twig", 1);
         $this->blocks = array(
             'fos_user_content' => array($this, 'block_fos_user_content'),
         );
@@ -16,25 +16,25 @@ class __TwigTemplate_50d85bf429b022fc46fb6207ac27c75201f5fafd053baceb1aff6318576
 
     protected function doGetParent(array $context)
     {
-        return "BDESiteBundle::Layout.html.twig";
+        return "BDEUserBundle::Layout.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_cece31fd5ca73531f46059329812fc7a2a68568073e719b5e88103de761cc1dd = $this->env->getExtension("native_profiler");
-        $__internal_cece31fd5ca73531f46059329812fc7a2a68568073e719b5e88103de761cc1dd->enter($__internal_cece31fd5ca73531f46059329812fc7a2a68568073e719b5e88103de761cc1dd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@BDEUser/Security/login.html.twig"));
+        $__internal_f79f2ebb77e9c79ebc3ae71a718c0937dfb6093a6bae489bdbd71d24d6be3fbe = $this->env->getExtension("native_profiler");
+        $__internal_f79f2ebb77e9c79ebc3ae71a718c0937dfb6093a6bae489bdbd71d24d6be3fbe->enter($__internal_f79f2ebb77e9c79ebc3ae71a718c0937dfb6093a6bae489bdbd71d24d6be3fbe_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@BDEUser/Security/login.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_cece31fd5ca73531f46059329812fc7a2a68568073e719b5e88103de761cc1dd->leave($__internal_cece31fd5ca73531f46059329812fc7a2a68568073e719b5e88103de761cc1dd_prof);
+        $__internal_f79f2ebb77e9c79ebc3ae71a718c0937dfb6093a6bae489bdbd71d24d6be3fbe->leave($__internal_f79f2ebb77e9c79ebc3ae71a718c0937dfb6093a6bae489bdbd71d24d6be3fbe_prof);
 
     }
 
     // line 5
     public function block_fos_user_content($context, array $blocks = array())
     {
-        $__internal_d5c4bee9acb705b7f2d5a8dba950f4c87c0997131ac7bcd31304516fd4d6c8c1 = $this->env->getExtension("native_profiler");
-        $__internal_d5c4bee9acb705b7f2d5a8dba950f4c87c0997131ac7bcd31304516fd4d6c8c1->enter($__internal_d5c4bee9acb705b7f2d5a8dba950f4c87c0997131ac7bcd31304516fd4d6c8c1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
+        $__internal_6a99bb0ead8b3f97e8682a0ff7f77191082758a47a2be6f5a3bafe11b47c662f = $this->env->getExtension("native_profiler");
+        $__internal_6a99bb0ead8b3f97e8682a0ff7f77191082758a47a2be6f5a3bafe11b47c662f->enter($__internal_6a99bb0ead8b3f97e8682a0ff7f77191082758a47a2be6f5a3bafe11b47c662f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
 
         // line 6
         if ((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error"))) {
@@ -83,7 +83,7 @@ class __TwigTemplate_50d85bf429b022fc46fb6207ac27c75201f5fafd053baceb1aff6318576
 </form>
 ";
         
-        $__internal_d5c4bee9acb705b7f2d5a8dba950f4c87c0997131ac7bcd31304516fd4d6c8c1->leave($__internal_d5c4bee9acb705b7f2d5a8dba950f4c87c0997131ac7bcd31304516fd4d6c8c1_prof);
+        $__internal_6a99bb0ead8b3f97e8682a0ff7f77191082758a47a2be6f5a3bafe11b47c662f->leave($__internal_6a99bb0ead8b3f97e8682a0ff7f77191082758a47a2be6f5a3bafe11b47c662f_prof);
 
     }
 
@@ -102,7 +102,7 @@ class __TwigTemplate_50d85bf429b022fc46fb6207ac27c75201f5fafd053baceb1aff6318576
         return array (  81 => 22,  76 => 20,  69 => 16,  64 => 14,  60 => 13,  55 => 11,  51 => 10,  48 => 9,  42 => 7,  40 => 6,  34 => 5,  11 => 1,);
     }
 }
-/* {% extends "BDESiteBundle::Layout.html.twig" %}*/
+/* {% extends "BDEUserBundle::Layout.html.twig" %}*/
 /* */
 /* {% trans_default_domain 'FOSUserBundle' %}*/
 /* */
@@ -126,4 +126,3 @@ class __TwigTemplate_50d85bf429b022fc46fb6207ac27c75201f5fafd053baceb1aff6318576
 /*     <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />*/
 /* </form>*/
 /* {% endblock fos_user_content %}*/
-/* */

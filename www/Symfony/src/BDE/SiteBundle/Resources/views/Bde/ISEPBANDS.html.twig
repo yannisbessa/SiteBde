@@ -1,0 +1,27 @@
+
+{# src/OCDE/SiteBundle/Resources/views/Bde/AssoSite.html.twig #}
+
+
+{% extends "BDESiteBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} ISEPBANDS{% endblock %}
+{% block img %}
+    <header class="intro-header" style="background-image: url({{asset ('img/ISEPBANDS.jpg')}});">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  <div class="site-heading">
+                        <h1 style ="color:white";>ISEP BANDS</h1>
+
+{% endblock %}
+{% block body %}
+<p>ISEP BANDS</p>
+
+
+<p>ISEP Bands est une association dont le but est de réunir les musiciens de l’ISEP pour jouer ensemble dans une salle de répétition mise à notre disposition. Nous souhaitons réaliser au minimum deux concerts au cours de l'année : un à Noël et un pendant la semaine de campagne BDE (Avril). Tous les styles sont au programme, donc que vous jouiez de la guitare ou d'un instrument improbable, il y aura toujours un morceau pour vous. 
+N'hésitez pas à allez sur notre page Facebook :</p>
+<p>https://www.facebook.com/pages/ISEP-Bands/397215573683079</p>
+
+<p>Date de création : Mercredi 1er Septembre 2010</p>
+<p>Email : isepbands@isep.fr</p>
+{% endblock %}

@@ -6,11 +6,11 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: fr
 
 framework:
     #esi:             ~
-    translator:      { fallback: %locale% }
+    translator:      ~
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -72,3 +72,30 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: BDE\UserBundle\Entity\User
+
+fr3d_ldap:
+    driver:
+        host:                ldap.isep.fr
+        port:                636    # Optional
+        username:            ybessa    # Optional
+        password:            b_7337!B    # Optional
+#       bindRequiresDn:      true   # Optional
+        baseDn:              ou=users, dc=host, dc=foo   # Optional
+#       accountFilterFormat: (&(uid=%s)) # Optional. sprintf format %s will be the username
+#       optReferrals:        false  # Optional
+#       useSsl:              true   # Enable SSL negotiation. Optional
+#       useStartTls:         true   # Enable TLS negotiation. Optional
+#       accountCanonicalForm: 3 # ACCTNAME_FORM_BACKSLASH this is only needed if your users have to login with something like HOST\User
+        accountDomainName: ldap.isep.fr
+        accountDomainNameShort: LOCAL # if you use the Backslash form set both to Hostname than the Username will be converted to HOST\User
+    user:
+        baseDn: ou=People, dc=isep.fr,dc=foo
+        filter: (&(ObjectClass=Person))
+#       usernameAttribute: uid # Optional
+        attributes:          # Specify ldap attributes mapping [ldap attribute, user object method]
+           - { ldap_attr: samaccountname,  user_method: setUsername } # Default    # Optional
+           
+#           - { ldap_attr: ...,  user_method: ... }         # Optional
+#   service:
+#       user_hydrator: fr3d_ldap.user_hydrator.default # Overrides default user hydrator
+#       ldap_manager: fr3d_ldap.ldap_manager.default   # Overrides default ldap manager

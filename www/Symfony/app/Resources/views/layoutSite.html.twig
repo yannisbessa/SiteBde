@@ -32,7 +32,7 @@
 {% block header %}
 <headerr>
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top" style="position:fixed;">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -47,9 +47,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                <li>
-                        <a href="{{ path('BDE_site_Accueil') }}">Site du BDE de l'ISEP</a>
-                        </li>
+      
                         
                     <li>
                         <a href="{{ path('BDE_site_Accueil') }}">Accueil</a>
@@ -79,9 +77,11 @@
                         
                          {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
     Connecté en tant que {{ app.user.username }}
-    -
+    </li><li>
     <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
 {% else %}
+</li>
+<li>
     <a href="{{ path('fos_user_security_login') }}">Connexion</a>
 {% endif %}       </a>
                    </a>     

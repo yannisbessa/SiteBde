@@ -146,7 +146,7 @@ mohon kunjungi halaman berikut:
 %confirmationUrl%
 
 Hormat Kami,
-the Team.
+Tim Website.
 ',
     'resetting.password_already_requested' => 'Password untuk pengguna ini telah di request dalam waktu 24 jam.',
     'resetting.check_email' => 'Email telah dikirim ke %email%. Anda harus mengklik link di dalam email tersebut agar dapat mereset password anda.',
@@ -158,14 +158,14 @@ the Team.
     'resetting.email.subject' => 'Reset Password',
     'resetting.email.message' => 'Halo %username%!
 
-Untuk mereset password anda mohon kunjungi link berikut:
+Untuk mereset password anda mohon kunjungi halaman berikut:
 %confirmationUrl%
 
-Homrat Kami,
-the Team.
+Hormat Kami,
+Tim Website.
 ',
-    'layout.logout' => 'Logout',
-    'layout.login' => 'Login',
+    'layout.logout' => 'Keluar',
+    'layout.login' => 'Masuk',
     'layout.register' => 'Pendaftaran',
     'layout.logged_in_as' => 'Masuk sebagai %username%',
     'form.group_name' => 'Nama Grup',
@@ -281,6 +281,7 @@ $catalogueEn = new MessageCatalogue('en', array (
     'fos_user.group.blank' => 'Please enter a name',
     'fos_user.group.short' => '[-Inf,Inf]The name is too short',
     'fos_user.group.long' => '[-Inf,Inf]The name is too long',
+    'fr3d_ldap.username.already_used' => 'The username is already used',
   ),
   'security' => 
   array (

@@ -15,8 +15,8 @@ class __TwigTemplate_91444279a979bd87cb50ecb27a5ef27b3096e37322930f2ed22607b513a
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_2a6823762b8d1973d75b70560a568b7f4f13bd6265e30b0935c6eb2b8789cd06 = $this->env->getExtension("native_profiler");
-        $__internal_2a6823762b8d1973d75b70560a568b7f4f13bd6265e30b0935c6eb2b8789cd06->enter($__internal_2a6823762b8d1973d75b70560a568b7f4f13bd6265e30b0935c6eb2b8789cd06_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@WebProfiler/Profiler/toolbar.css.twig"));
+        $__internal_94669a6544c2f9d93d08bed004b43e2bee4753da0c54e7e8a8e60fed5b1c882a = $this->env->getExtension("native_profiler");
+        $__internal_94669a6544c2f9d93d08bed004b43e2bee4753da0c54e7e8a8e60fed5b1c882a->enter($__internal_94669a6544c2f9d93d08bed004b43e2bee4753da0c54e7e8a8e60fed5b1c882a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@WebProfiler/Profiler/toolbar.css.twig"));
 
         // line 2
         $context["colors"] = array("success" => "#4F805D", "warning" => "#A46A1F", "error" => "#B0413E");
@@ -80,6 +80,7 @@ class __TwigTemplate_91444279a979bd87cb50ecb27a5ef27b3096e37322930f2ed22607b513a
 .sf-toolbarreset svg,
 .sf-toolbarreset img {
     height: 20px;
+    display: inline-block;
 }
 
 .sf-toolbarreset .hide-button {
@@ -218,40 +219,40 @@ class __TwigTemplate_91444279a979bd87cb50ecb27a5ef27b3096e37322930f2ed22607b513a
 
 .sf-toolbar-block .sf-toolbar-status-green {
     background-color: ";
-        // line 199
+        // line 200
         echo $this->getAttribute((isset($context["colors"]) ? $context["colors"] : $this->getContext($context, "colors")), "success", array());
         echo ";
 }
 .sf-toolbar-block .sf-toolbar-status-red {
     background-color: ";
-        // line 202
+        // line 203
         echo $this->getAttribute((isset($context["colors"]) ? $context["colors"] : $this->getContext($context, "colors")), "error", array());
         echo ";
 }
 .sf-toolbar-block .sf-toolbar-status-yellow {
     background-color: ";
-        // line 205
+        // line 206
         echo $this->getAttribute((isset($context["colors"]) ? $context["colors"] : $this->getContext($context, "colors")), "warning", array());
         echo ";
 }
 
 .sf-toolbar-block.sf-toolbar-status-green {
     background-color: ";
-        // line 209
+        // line 210
         echo $this->getAttribute((isset($context["colors"]) ? $context["colors"] : $this->getContext($context, "colors")), "success", array());
         echo ";
     color: #FFF;
 }
 .sf-toolbar-block.sf-toolbar-status-red {
     background-color: ";
-        // line 213
+        // line 214
         echo $this->getAttribute((isset($context["colors"]) ? $context["colors"] : $this->getContext($context, "colors")), "error", array());
         echo ";
     color: #FFF;
 }
 .sf-toolbar-block.sf-toolbar-status-yellow {
     background-color: ";
-        // line 217
+        // line 218
         echo $this->getAttribute((isset($context["colors"]) ? $context["colors"] : $this->getContext($context, "colors")), "warning", array());
         echo ";
     color: #FFF;
@@ -409,9 +410,9 @@ class __TwigTemplate_91444279a979bd87cb50ecb27a5ef27b3096e37322930f2ed22607b513a
 
 /* Override the setting when the toolbar is on the top */
 ";
-        // line 372
+        // line 373
         if (((isset($context["position"]) ? $context["position"] : $this->getContext($context, "position")) == "top")) {
-            // line 373
+            // line 374
             echo "    .sf-minitoolbar {
         border-bottom-left-radius: 4px;
         border-top-left-radius: 0;
@@ -432,18 +433,18 @@ class __TwigTemplate_91444279a979bd87cb50ecb27a5ef27b3096e37322930f2ed22607b513a
     }
 ";
         }
-        // line 392
+        // line 393
         echo "
 ";
-        // line 393
+        // line 394
         if ( !(isset($context["floatable"]) ? $context["floatable"] : $this->getContext($context, "floatable"))) {
-            // line 394
+            // line 395
             echo "    .sf-toolbarreset {
         position: static;
     }
 ";
         }
-        // line 398
+        // line 399
         echo "
 /* Responsive Design */
 .sf-toolbar-icon .sf-toolbar-label,
@@ -537,7 +538,7 @@ class __TwigTemplate_91444279a979bd87cb50ecb27a5ef27b3096e37322930f2ed22607b513a
 }
 ";
         
-        $__internal_2a6823762b8d1973d75b70560a568b7f4f13bd6265e30b0935c6eb2b8789cd06->leave($__internal_2a6823762b8d1973d75b70560a568b7f4f13bd6265e30b0935c6eb2b8789cd06_prof);
+        $__internal_94669a6544c2f9d93d08bed004b43e2bee4753da0c54e7e8a8e60fed5b1c882a->leave($__internal_94669a6544c2f9d93d08bed004b43e2bee4753da0c54e7e8a8e60fed5b1c882a_prof);
 
     }
 
@@ -553,7 +554,7 @@ class __TwigTemplate_91444279a979bd87cb50ecb27a5ef27b3096e37322930f2ed22607b513a
 
     public function getDebugInfo()
     {
-        return array (  447 => 398,  441 => 394,  439 => 393,  436 => 392,  415 => 373,  413 => 372,  255 => 217,  248 => 213,  241 => 209,  234 => 205,  228 => 202,  222 => 199,  24 => 3,  22 => 2,);
+        return array (  448 => 399,  442 => 395,  440 => 394,  437 => 393,  416 => 374,  414 => 373,  256 => 218,  249 => 214,  242 => 210,  235 => 206,  229 => 203,  223 => 200,  24 => 3,  22 => 2,);
     }
 }
 /* {# when updating any of these colors, do the same in profiler.css.twig #}*/
@@ -617,6 +618,7 @@ class __TwigTemplate_91444279a979bd87cb50ecb27a5ef27b3096e37322930f2ed22607b513a
 /* .sf-toolbarreset svg,*/
 /* .sf-toolbarreset img {*/
 /*     height: 20px;*/
+/*     display: inline-block;*/
 /* }*/
 /* */
 /* .sf-toolbarreset .hide-button {*/

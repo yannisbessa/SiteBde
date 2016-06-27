@@ -23,33 +23,33 @@ class __TwigTemplate_60a579620993e385c65291f5ef611262a2b0bb4c9c20778f2d841d15ed0
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d7d315c925f3d0ae287335cab6cf379a81638f824c2b7ca707fa67412a989792 = $this->env->getExtension("native_profiler");
-        $__internal_d7d315c925f3d0ae287335cab6cf379a81638f824c2b7ca707fa67412a989792->enter($__internal_d7d315c925f3d0ae287335cab6cf379a81638f824c2b7ca707fa67412a989792_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BDESiteBundle:Bde:ELLYPSIS.html.twig"));
+        $__internal_1cf6d492d49c5298ef46052b91ba3866bc8f43a97aa42db12b71a4babcf507ef = $this->env->getExtension("native_profiler");
+        $__internal_1cf6d492d49c5298ef46052b91ba3866bc8f43a97aa42db12b71a4babcf507ef->enter($__internal_1cf6d492d49c5298ef46052b91ba3866bc8f43a97aa42db12b71a4babcf507ef_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BDESiteBundle:Bde:ELLYPSIS.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_d7d315c925f3d0ae287335cab6cf379a81638f824c2b7ca707fa67412a989792->leave($__internal_d7d315c925f3d0ae287335cab6cf379a81638f824c2b7ca707fa67412a989792_prof);
+        $__internal_1cf6d492d49c5298ef46052b91ba3866bc8f43a97aa42db12b71a4babcf507ef->leave($__internal_1cf6d492d49c5298ef46052b91ba3866bc8f43a97aa42db12b71a4babcf507ef_prof);
 
     }
 
     // line 6
     public function block_title($context, array $blocks = array())
     {
-        $__internal_2b5f3d24e25848ae39800d63feca6255936437578dc5985b090dec9f4a6d63c1 = $this->env->getExtension("native_profiler");
-        $__internal_2b5f3d24e25848ae39800d63feca6255936437578dc5985b090dec9f4a6d63c1->enter($__internal_2b5f3d24e25848ae39800d63feca6255936437578dc5985b090dec9f4a6d63c1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_1a6f92ae5e2b4c9d8203090664b5f48819b04aa8eada041f0a351dad064b754f = $this->env->getExtension("native_profiler");
+        $__internal_1a6f92ae5e2b4c9d8203090664b5f48819b04aa8eada041f0a351dad064b754f->enter($__internal_1a6f92ae5e2b4c9d8203090664b5f48819b04aa8eada041f0a351dad064b754f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         $this->displayParentBlock("title", $context, $blocks);
         echo " ELLYPSIS";
         
-        $__internal_2b5f3d24e25848ae39800d63feca6255936437578dc5985b090dec9f4a6d63c1->leave($__internal_2b5f3d24e25848ae39800d63feca6255936437578dc5985b090dec9f4a6d63c1_prof);
+        $__internal_1a6f92ae5e2b4c9d8203090664b5f48819b04aa8eada041f0a351dad064b754f->leave($__internal_1a6f92ae5e2b4c9d8203090664b5f48819b04aa8eada041f0a351dad064b754f_prof);
 
     }
 
     // line 7
     public function block_img($context, array $blocks = array())
     {
-        $__internal_7907aec2ebb111de832ddf1d24f7515aa9ea63c0e0136915695371e367ec16e8 = $this->env->getExtension("native_profiler");
-        $__internal_7907aec2ebb111de832ddf1d24f7515aa9ea63c0e0136915695371e367ec16e8->enter($__internal_7907aec2ebb111de832ddf1d24f7515aa9ea63c0e0136915695371e367ec16e8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "img"));
+        $__internal_76db1368e955c13a98928672059da92ec13632d9e7eff3d5387ec9dfaaa2500d = $this->env->getExtension("native_profiler");
+        $__internal_76db1368e955c13a98928672059da92ec13632d9e7eff3d5387ec9dfaaa2500d->enter($__internal_76db1368e955c13a98928672059da92ec13632d9e7eff3d5387ec9dfaaa2500d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "img"));
 
         // line 8
         echo "    <header class=\"intro-header\" style=\"background-image: url(";
@@ -63,15 +63,15 @@ class __TwigTemplate_60a579620993e385c65291f5ef611262a2b0bb4c9c20778f2d841d15ed0
 
 ";
         
-        $__internal_7907aec2ebb111de832ddf1d24f7515aa9ea63c0e0136915695371e367ec16e8->leave($__internal_7907aec2ebb111de832ddf1d24f7515aa9ea63c0e0136915695371e367ec16e8_prof);
+        $__internal_76db1368e955c13a98928672059da92ec13632d9e7eff3d5387ec9dfaaa2500d->leave($__internal_76db1368e955c13a98928672059da92ec13632d9e7eff3d5387ec9dfaaa2500d_prof);
 
     }
 
     // line 16
     public function block_body($context, array $blocks = array())
     {
-        $__internal_0dff2ef3a1e0753916b5a87e259c2975d7baa366d9c12339254570f703ec3f94 = $this->env->getExtension("native_profiler");
-        $__internal_0dff2ef3a1e0753916b5a87e259c2975d7baa366d9c12339254570f703ec3f94->enter($__internal_0dff2ef3a1e0753916b5a87e259c2975d7baa366d9c12339254570f703ec3f94_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_9ea37c67416799a0fa9419f1e025bf953a542d5092c816f85a8849458ceeb457 = $this->env->getExtension("native_profiler");
+        $__internal_9ea37c67416799a0fa9419f1e025bf953a542d5092c816f85a8849458ceeb457->enter($__internal_9ea37c67416799a0fa9419f1e025bf953a542d5092c816f85a8849458ceeb457_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 17
         echo "<p>Ellypsis</p>
@@ -100,7 +100,7 @@ www.ellypsis.fr</p>
 <p>Email : ellypsis@isep.fr</p>
 ";
         
-        $__internal_0dff2ef3a1e0753916b5a87e259c2975d7baa366d9c12339254570f703ec3f94->leave($__internal_0dff2ef3a1e0753916b5a87e259c2975d7baa366d9c12339254570f703ec3f94_prof);
+        $__internal_9ea37c67416799a0fa9419f1e025bf953a542d5092c816f85a8849458ceeb457->leave($__internal_9ea37c67416799a0fa9419f1e025bf953a542d5092c816f85a8849458ceeb457_prof);
 
     }
 

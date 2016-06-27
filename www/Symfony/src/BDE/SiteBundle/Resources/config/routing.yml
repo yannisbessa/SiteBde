@@ -46,12 +46,6 @@ BDE_site_Cal:
 BDE_site_ISEP:
     path:      /ISEP  
     defaults:  { _controller: BDESiteBundle:Bde:ISEP }
-
-BDE_site_AccueilEleve:
-    path:      /AEleve 
-    defaults:  { _controller: BDESiteBundle:Bde:AccueilEleve }
-
-BDE_site_Discussion:
-    path:      /Disc  
-    defaults:  { _controller: BDESiteBundle:Bde:Discussion }
-
+BDE_site_EAccueil:
+    path:      /EAccueil 
+    defaults:  { _controller: BDESiteBundle:Bde:EAccueil }

@@ -145,7 +145,7 @@ $catalogue = new MessageCatalogue('fr', array (
     'registration.check_email' => 'Un e-mail a été envoyé à l\'adresse %email%. Il contient un lien d\'activation sur lequel il vous faudra cliquer afin d\'activer votre compte.',
     'registration.confirmed' => 'Félicitations %username%, votre compte est maintenant activé.',
     'registration.back' => 'Retour à la page d\'origine.',
-    'registration.submit' => 'Enregistrer',
+    'registration.submit' => 'Créer un compte',
     'registration.flash.user_created' => 'L\'utilisateur a été créé avec succès',
     'registration.email.subject' => 'Bienvenue %username% !',
     'registration.email.message' => 'Bonjour %username% !
@@ -287,6 +287,7 @@ $catalogueEn = new MessageCatalogue('en', array (
     'fos_user.group.blank' => 'Please enter a name',
     'fos_user.group.short' => '[-Inf,Inf]The name is too short',
     'fos_user.group.long' => '[-Inf,Inf]The name is too long',
+    'fr3d_ldap.username.already_used' => 'The username is already used',
   ),
   'security' => 
   array (

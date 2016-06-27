@@ -1,0 +1,38 @@
+{# src/OCDE/SiteBundle/Resources/views/Bde/AssoSite.html.twig #}
+
+
+{% extends "BDESiteBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }}Move your AS {% endblock %}
+
+{% block img %}
+    <header class="intro-header"  style="background-image: url({{asset ('img/AS.jpg')}});">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  <div class="site-heading" >
+                        <h1 style="color:white">Move your AS</h1>
+
+{% endblock %}
+{% block body %}
+<p> Move your AS</p>
+L'AS de l'ISEP propose toutes sortes d'activités.
+
+<p>* Football : Les rois du ballon</p>
+<p>* Tennis : Le simple plaisir de taper dans la petite balle jaune</p>
+<p>* Rugby : Sportifs avides de contacts...humains et physiques</p>
+<p>* Basket : Les dunkers fous </p>
+<p>* Volley : Une ambiance conviviale et sportive</p>
+<p>* Badminton : Sport de vitesse, de déplacement et de précision</p>
+
+<p>Elle est destinée pour n'importe quel isépien et n'importe quelle
+isépienne voulant faire du sport. Le niveau n'a pas d'importance.
+Débutant(e)s n'hésitez pas à découvrir un sport que vous n'aviez pas
+envisagé pratiquer jusqu'alors. Vous serez conseillés et encadrés.
+Sportif(ve)s confirmé(e)s apportez votre expérience au sein des clubs et
+portez haut les couleurs de l'école.</p>
+
+<p>Date de création : Mardi 1er Septembre 1959</p>
+<p>Email : as@isep.fr</p>
+
+{% endblock %}
